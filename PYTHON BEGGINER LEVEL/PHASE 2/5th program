@@ -1,0 +1,40 @@
+# ALL THE 3 CODES ARE FOR LARGEST ELEMENT
+# ALL THE 3 CODES ARE WRITTEN ON THE DIFFICULTY LEVELS IN WRITTING THE PROGRAM
+# ALL THE 3 CODES ARE WRITTEN IN THE USER FRIENDLY FORMATE
+
+
+# Program 1: Largest in list
+nums = list(map(int, input("Enter numbers: ").split()))
+print("Largest =", max(nums))
+
+# OUTPUT:
+# Enter numbers: 3 5 7 8 3 3 2 6 4 3
+# Largest = 8
+
+
+
+
+# Program 2: Largest without max()
+nums = list(map(int, input("Enter numbers: ").split()))
+largest = nums[0]
+for n in nums:
+    if n > largest:
+        largest = n
+print("Largest =", largest)
+
+# OUTPUT:
+# Enter numbers: 3 6 8 4 2  6 9 6 2
+# Largest = 9
+
+
+
+
+
+# Program 3: Largest string by length
+words = input("Enter words: ").split()
+longest = max(words, key=len)
+print("Longest word =", longest)
+
+# OUTPUT:
+# Enter words: AMRIT ANSH RAJ AMAN ACHAL
+# Longest word = AMRIT

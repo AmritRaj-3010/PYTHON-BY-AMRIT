@@ -1,0 +1,46 @@
+# ALL THE 3 CODES ARE FOR COUNT VOWELS
+# ALL THE 3 CODES ARE WRITTEN ON THE DIFFICULTY LEVELS IN WRITTING THE PROGRAM
+# ALL THE 3 CODES ARE WRITTEN IN THE USER FRIENDLY FORMATE
+
+
+# Program 1: Count vowels in string
+s = input("Enter a string: ")
+vowels = "aeiouAEIOU"
+count = sum(1 for ch in s if ch in vowels)
+print("Number of vowels =", count)
+
+# OUTPUT: 
+# Enter a string: ANANYA IS BIG
+# Number of vowels = 5
+
+
+
+
+# Program 2: Print vowels found
+s = input("Enter a string: ")
+print("Vowels found:", [ch for ch in s if ch.lower() in "aeiou"])
+
+# OUTPUT :
+# Enter a string: AWANI IS SMALL
+# Vowels found: ['A', 'A', 'I', 'I', 'A']
+
+
+
+
+# Program 3: Count vowels in each word
+sentence = input("Enter a sentence: ")
+for word in sentence.split():
+    v_count = sum(1 for ch in word if ch.lower() in "aeiou")
+    print(word, "->", v_count, "vowels")
+
+# OUTPUT :
+# Enter a sentence: ANANYA IS BIG AND AWANI IS SMALL
+# ANANYA -> 3 vowels
+# IS -> 1 vowels
+# BIG -> 1 vowels
+# AND -> 1 vowels
+# AWANI -> 3 vowels
+# IS -> 1 vowels
+# SMALL -> 1 vowels
+
+

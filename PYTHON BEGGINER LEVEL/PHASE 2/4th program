@@ -1,0 +1,50 @@
+# ALL THE 3 CODES ARE FOR LIST STORING
+# ALL THE 3 CODES ARE WRITTEN ON THE DIFFICULTY LEVELS IN WRITTING THE PROGRAM
+# ALL THE 3 CODES ARE WRITTEN IN THE USER FRIENDLY FORMATE
+
+
+
+# Program 1: Sort numbers ascending
+nums = list(map(int, input("Enter numbers: ").split()))
+nums.sort()
+print("Sorted list =", nums)
+
+# OUTPUT:
+# Enter numbers: 2 4 8 4 2  8 2
+# Sorted list = [2, 2, 2, 4, 4, 8, 8]
+
+
+
+
+# Program 2: Sort descending
+nums = list(map(int, input("Enter numbers: ").split()))
+nums.sort(reverse=True)
+print("Sorted list =", nums)
+
+# OUTPUT:
+# Enter numbers: 3 6 3 5 8 5 3
+# Sorted list = [8, 6, 5, 5, 3, 3, 3]
+
+
+
+
+
+# Program 3: Sort strings alphabetically
+words = input("Enter words: ").split()
+words.sort()
+print("Sorted words =", words)
+
+# OUTPUT:
+# Enter words: AMRIT AWANI ANANYA ANSH ABHAY
+# Sorted words = ['ABHAY', 'AMRIT', 'ANANYA', 'ANSH', 'AWANI']
+
+
+
+
+
+
+
+
+
+
+

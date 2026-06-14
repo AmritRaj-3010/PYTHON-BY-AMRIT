@@ -1,0 +1,52 @@
+# ALL THE 3 CODES ARE FOR REMOVE DUPLICATES
+# ALL THE 3 CODES ARE WRITTEN ON THE DIFFICULTY LEVELS IN WRITTING THE PROGRAM
+# ALL THE 3 CODES ARE WRITTEN IN THE USER FRIENDLY FORMATE
+
+
+
+# Program 1: Remove duplicates using set
+nums = list(map(int, input("Enter numbers: ").split()))
+unique = list(set(nums))
+print("Unique list =", unique)
+
+# OUTPUT:
+# Enter numbers: 2 4 6 8 5 2 1 5 4 3 
+# Unique list = [1, 2, 3, 4, 5, 6, 8]
+
+
+
+
+# Program 2: Remove duplicates preserving order
+nums = list(map(int, input("Enter numbers: ").split()))
+unique = []
+for n in nums:
+    if n not in unique:
+        unique.append(n)
+print("Unique list =", unique)
+
+# OUTPUT:
+# Enter numbers: 4 8  9 4 5 7 4 3 6  5 9
+# Unique list = [4, 8, 9, 5, 7, 3, 6]
+
+
+
+
+# Program 3: Remove duplicate words
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+unique_words = []
+for w in words:
+    if w not in unique_words:
+        unique_words.append(w)
+print("Sentence without duplicates =", " ".join(unique_words))
+
+# OUTPUT:
+# Enter a sentence: AMAN AND ARMAN IS AND IS GOOD
+# Sentence without duplicates = AMAN AND ARMAN IS GOOD
+
+
+
+
+
+
+

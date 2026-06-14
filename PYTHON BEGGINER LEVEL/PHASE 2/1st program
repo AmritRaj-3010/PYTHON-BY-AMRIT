@@ -1,0 +1,44 @@
+# ALL THE 3 CODES ARE FOR STRING LENGTH
+# ALL THE 3 CODES ARE WRITTEN ON THE DIFFICULTY LEVELS IN WRITTING THE PROGRAM
+# ALL THE 3 CODES ARE WRITTEN IN THE USER FRIENDLY FORMATE
+
+
+# Program 1: Find length of a string
+s = input("Enter a string: ")
+print("Length of string =", len(s))
+
+# OUTPUT:
+# Enter a string: AMRIT
+# Length of string = 5
+
+
+
+
+
+# Program 2: Length without using len()
+s = input("Enter a string: ")
+count = 0
+for ch in s:
+    count += 1
+print("Length of string =", count)
+
+
+# OUTPUT: 
+# Enter a string: ANANYA
+# Length of string = 6
+
+
+
+
+
+# Program 3: Length of each word
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+for w in words:
+    print(w, "->", len(w))
+
+# OUTPUT: 
+# Enter a sentence: AWANI IS MAD 
+# AWANI -> 5
+# IS -> 2
+# MAD -> 3
