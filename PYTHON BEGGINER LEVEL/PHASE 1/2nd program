@@ -1,0 +1,69 @@
+# ALL PROGRAMS ARE WRITTEN FOR SIMPLE CALCULATOR
+# ALL PROGRAMS ARE WRITTEN ON THE DIFFICULTY LEVELS OF THE CALCULATOR 
+# ALL PROGRAMS ARE WRITTEN IN THE USER INPUT FORMAT 
+
+
+# Program 1: Addition
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print("Sum =", a + b)
+
+#OUTPUT: 
+# Enter first number: 5
+# Enter second number: 6
+# Sum = 11
+
+
+
+
+
+
+
+
+# Program 2: All operations
+x = int(input("Enter first number: "))
+y = int(input("Enter second number: "))
+print("Addition:", x + y)
+print("Subtraction:", x - y)
+print("Multiplication:", x * y)
+print("Division:", x / y)
+
+#OUTPUT: 
+# Enter first number: 56
+# Enter second number: 65
+# Addition: 121
+# Subtraction: -9
+# Multiplication: 3640
+# Division: 0.8615384615384616
+
+
+
+
+
+
+
+# Program 3: Menu-driven calculator
+print("1. Add\n2. Subtract\n3. Multiply\n4. Divide")
+choice = int(input("Enter choice: "))
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+if choice == 1:
+    print("Result =", num1 + num2)
+elif choice == 2:
+    print("Result =", num1 - num2)
+elif choice == 3:
+    print("Result =", num1 * num2)
+elif choice == 4:
+    print("Result =", num1 / num2)
+else:
+    print("Invalid choice")
+
+# #OUTPUT: 
+# 1. Add
+# 2. Subtract
+# 3. Multiply
+# 4. Divide
+# Enter choice: 3
+# Enter first number: 34
+# Enter second number: 45
+# Result = 1530

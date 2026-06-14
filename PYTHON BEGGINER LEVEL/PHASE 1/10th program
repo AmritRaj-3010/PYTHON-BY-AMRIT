@@ -1,0 +1,41 @@
+# ALL PROGRAMS ARE WRITTEN FOR PELINDROME NUMBERS CHECK
+# ALL PROGRAMS ARE WRITTEN ON THE DIFFICULTY LEVELS OF THE PELINDROME SERIES
+# ALL PROGRAMS ARE WRITTEN IN THE USER INPUT FORMAT 
+
+
+# Program 1: Number palindrome
+n = int(input("Enter a number: "))
+print(n, "is Palindrome" if str(n) == str(n)[::-1] else "is Not Palindrome")
+
+#OUTPUT:
+# Enter a number: 64
+# 64 is Not Palindrome
+
+
+
+
+
+# Program 2: String palindrome
+s = input("Enter a string: ")
+print(s, "is Palindrome" if s == s[::-1] else "is Not Palindrome")
+
+# OUTPUT:
+# Enter a string: AMRIT  
+# AMRIT is Not Palindrome
+
+
+
+
+# # Program 3: Palindromes in range
+start = int(input("Enter start of range: "))
+end = int(input("Enter end of range: "))
+print("Palindromes between", start, "and", end, ":")
+for n in range(start, end+1):
+    if str(n) == str(n)[::-1]:
+        print(n, end=" ")
+
+# OUTPUT:
+# Enter start of range: 1
+# Enter end of range: 555
+# Palindromes between 1 and 555 :
+# 1 2 3 4 5 6 7 8 9 11 22 33 44 55 66 77 88 99 101 111 121 131 141 151 161 171 181 191 202 212 222 232 242 252 262 272 282 292 303 313 323 333 343 353 363 373 383 393 404 414 424 434 444 454 464 474 484 494 505 515 525 535 545 555 

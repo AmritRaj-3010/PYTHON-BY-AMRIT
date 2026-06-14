@@ -1,0 +1,47 @@
+# ALL PROGRAMS ARE WRITTEN FOR FIBONACCI SERIES
+# ALL PROGRAMS ARE WRITTEN ON THE DIFFICULTY LEVELS OF THE FIBONACCI SERIES 
+# ALL PROGRAMS ARE WRITTEN IN THE USER INPUT FORMAT 
+
+
+# Program 1: First n terms
+n = int(input("Enter number of terms: "))
+a, b = 0, 1
+for _ in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+
+#OUTPUT:
+# Enter number of terms: 5
+# 0 1 1 2 3 
+
+
+
+
+
+# Program 2: Recursion
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+terms = int(input("Enter number of terms: "))
+for i in range(terms):
+    print(fibonacci(i), end=" ")
+
+#OUTPUT:
+# Enter number of terms: 6
+# 0 1 1 2 3 5 
+
+
+
+
+
+# # Program 3: While loop until limit
+limit = int(input("Enter limit: "))
+a, b = 0, 1
+while a <= limit:
+    print(a, end=" ")
+    a, b = b, a + b
+
+#OUTPUT:
+# Enter limit: 7
+# 0 1 1 2 3 5 8

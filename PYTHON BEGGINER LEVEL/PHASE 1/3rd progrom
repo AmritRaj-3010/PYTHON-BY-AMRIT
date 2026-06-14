@@ -1,0 +1,54 @@
+# ALL PROGRAMS ARE WRITTEN FOR ODD AND EVEN NUMBERS 
+# ALL PROGRAMS ARE WRITTEN IN THE USER INPUT FORMAT 
+
+
+
+# Program 1: Single number check
+n = int(input("Enter a number: "))
+if n % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+# OUTPUT:
+# Enter a number: 8
+# Even 
+
+
+
+
+
+
+#  Program 2: Range check
+for i in range(1, 11):
+    if i % 2 == 0:
+        print(i, "is Even")
+    else:
+        print(i, "is Odd")
+
+# OUTPUT:
+# 1 is Odd
+# 2 is Even
+# 3 is Odd
+# 4 is Even
+# 5 is Odd
+# 6 is Even
+# 7 is Odd
+# 8 is Even
+# 9 is Odd
+# 10 is Even
+
+
+
+
+
+# # Program 3: Count odd/even in list
+numbers = [1, 2, 3, 4, 5, 6, 7]
+even_count = sum(1 for i in numbers if i % 2 == 0)
+odd_count = sum(1 for i in numbers if i % 2 != 0)
+print("Even numbers:", even_count)
+print("Odd numbers:", odd_count)
+
+# OUTPUT:
+# Even numbers: 3
+# Odd numbers: 4

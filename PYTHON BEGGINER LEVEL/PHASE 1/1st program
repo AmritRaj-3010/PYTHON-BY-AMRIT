@@ -1,0 +1,27 @@
+#BASIC PROGRAM IN PYTHON
+
+
+# Program 1: Basic Hello World
+print("Hello World")
+#Output: Hello World
+
+
+
+
+ 
+# Program 2: Print name and age
+name = "Amrit"
+age = 20
+print("My name is", name, "and I am", age, "years old.")
+#Output: My name is Amrit and I am 20 years old.
+
+
+
+
+
+# Program 3: Multi-line message
+print("Welcome to Python!\nThis is line 2.\nThis is line 3.")
+#Output: 
+# Welcome to Python!
+# This is line 2.
+# This is line 3.

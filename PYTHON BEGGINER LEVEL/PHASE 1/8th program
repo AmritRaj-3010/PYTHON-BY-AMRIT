@@ -1,0 +1,48 @@
+# ALL PROGRAMS ARE WRITTEN FOR SUM OF DIGITS
+# ALL PROGRAMS ARE WRITTEN ON THE DIFFICULTY LEVELS OF THE SUM OF DIGITS SERIES
+# ALL PROGRAMS ARE WRITTEN IN THE USER INPUT FORMAT 
+
+
+
+# Program 1: Using loop
+n = int(input("Enter a number: "))
+s = 0
+while n > 0:
+    s += n % 10
+    n //= 10
+print("Sum of digits =", s)
+
+# OUTPUT:
+# Enter a number: 76
+# Sum of digits = 13
+
+
+
+
+
+
+# Program 2: Using recursion
+def sum_digits(n):
+    if n == 0:
+        return 0
+    return n % 10 + sum_digits(n // 10)
+
+n = int(input("Enter a number: "))
+print("Sum of digits =", sum_digits(n))
+
+# OUTPUT:
+# Enter a number: 54
+# Sum of digits = 9
+
+
+
+
+# Program 3: Sum digits in list
+numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+for num in numbers:
+    s = sum(int(d) for d in str(num))
+    print("Sum of digits of", num, "=", s)
+
+# OUTPUT:
+# Enter numbers separated by space: 65
+# Sum of digits of 65 = 11

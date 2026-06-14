@@ -1,0 +1,103 @@
+# ALL PROGRAMS ARE WRITTEN FOR Multiplication Table
+# ALL PROGRAMS ARE WRITTEN TO MANIPULATE TO PRINT THE MULTIPLICATION TABLES 
+# ALL PROGRAMS ARE WRITTEN IN THE USER INPUT FORMAT
+
+
+
+
+# Program 1: Table of a number
+n = int(input("Enter a number to print its table: "))
+for i in range(1, 11):
+    print(n, "x", i, "=", n*i)
+
+#output:
+# Enter a number to print its table: 7
+# 7 x 1 = 7
+# 7 x 2 = 14
+# 7 x 3 = 21
+# 7 x 4 = 28
+# 7 x 5 = 35
+# 7 x 6 = 42
+# 7 x 7 = 49
+# 7 x 8 = 56
+# 7 x 9 = 63
+# 7 x 10 = 70
+
+
+
+
+
+
+# Program 2: Tables from 1 to N
+limit = int(input("Enter limit for tables: "))
+for n in range(1, limit+1):
+    print("\nTable of", n)
+    for i in range(1, 11):
+        print(n, "x", i, "=", n*i)
+
+# #OUTPUT:
+# Enter limit for tables: 4
+
+# Table of 1
+# 1 x 1 = 1
+# 1 x 2 = 2
+# 1 x 3 = 3
+# 1 x 4 = 4
+# 1 x 5 = 5
+# 1 x 6 = 6
+# 1 x 7 = 7
+# 1 x 8 = 8
+# 1 x 9 = 9
+# 1 x 10 = 10
+
+# Table of 2
+# 2 x 1 = 2
+# 2 x 2 = 4
+# 2 x 3 = 6
+# 2 x 4 = 8
+# 2 x 5 = 10
+# 2 x 6 = 12
+# 2 x 7 = 14
+# 2 x 8 = 16
+# 2 x 9 = 18
+# 2 x 10 = 20
+
+# Table of 3
+# 3 x 1 = 3
+# 3 x 2 = 6
+# 3 x 3 = 9
+# 3 x 4 = 12
+# 3 x 5 = 15
+# 3 x 6 = 18
+# 3 x 7 = 21
+# 3 x 8 = 24
+# 3 x 9 = 27
+# 3 x 10 = 30
+
+# Table of 4
+# 4 x 1 = 4
+# 4 x 2 = 8
+# 4 x 3 = 12
+# 4 x 4 = 16
+# 4 x 5 = 20
+# 4 x 6 = 24
+# 4 x 7 = 28
+# 4 x 8 = 32
+# 4 x 9 = 36
+# 4 x 10 = 40
+
+
+
+
+
+
+# Program 3: Save table to file
+n = int(input("Enter a number to save its table: "))
+with open("table.txt", "w") as f:
+    for i in range(1, 11):
+        f.write(f"{n} x {i} = {n*i}\n")
+print("Table saved to table.txt file")
+
+#OUTPUT:
+# Enter a number to save its table: 4
+# Table saved to table.txt file

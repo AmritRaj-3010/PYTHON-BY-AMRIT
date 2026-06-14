@@ -1,0 +1,43 @@
+# ALL PROGRAMS ARE WRITTEN FOR REVERSE OF A NUMBER
+# ALL PROGRAMS ARE WRITTEN ON THE DIFFICULTY LEVELS TO REVERSE THE SERIES
+# ALL PROGRAMS ARE WRITTEN IN THE USER INPUT FORMAT 
+
+
+
+# Program 1: Using loop
+n = int(input("Enter a number to reverse: "))
+rev = 0
+while n > 0:
+    rev = rev*10 + n%10
+    n //= 10
+print("Reversed number =", rev)
+
+# output:
+# Enter a number to reverse: 3746
+# Reversed number = 6473
+
+
+
+
+
+
+# Program 2: Using string slicing
+n = input("Enter a number to reverse: ")
+print("Reversed number =", n[::-1])
+
+# OUTPUT:
+# Enter a number to reverse: 7383
+# Reversed number = 3837
+
+
+
+
+
+# Program 3: Reverse list of numbers
+numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+rev_list = [int(str(x)[::-1]) for x in numbers]
+print("Reversed list =", rev_list)
+
+# OUTPUT:
+# Enter numbers separated by space: 65
+# Reversed list = [56]
