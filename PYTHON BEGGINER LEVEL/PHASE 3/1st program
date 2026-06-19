@@ -1,0 +1,44 @@
+# ALL THE 3 CODES ARE FOR Simple Function → Define and Call
+# ALL THE 3 CODES ARE WRITTEN ON THE DIFFICULTY LEVELS IN WRITTING THE PROGRAM
+# ALL THE 3 CODES ARE WRITTEN IN THE USER FRIENDLY FORMATE
+
+
+
+# Program 1: Add two numbers
+def add(a, b):
+    return a + b
+
+x = int(input("Enter first number: "))
+y = int(input("Enter second number: "))
+print("Sum =", add(x, y))
+
+# OUTPUT :
+# Enter first number: 1
+# Enter second number: 2
+# Sum = 3
+
+
+
+# Program 2: Greeting function
+def greet(name):
+    print("Hello,", name)
+
+name = input("Enter your name: ")
+greet(name)
+
+# OUTPUT :
+# Enter your name: AMRIT
+# Hello, AMRIT
+
+
+
+# Program 3: Function with default value
+def welcome(city="Patna"):
+    print("Welcome to", city)
+
+city = input("Enter a city (or press Enter): ")
+welcome(city if city else "Patna")
+
+# OUTPUT :
+# Enter a city (or press Enter): DELHI
+# Welcome to DELHI
