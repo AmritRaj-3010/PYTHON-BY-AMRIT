@@ -1,0 +1,56 @@
+# ALL THE 3 CODES ARE FOR Recursive Function → Factorial/Fibonacci
+# ALL THE 3 CODES ARE WRITTEN ON THE DIFFICULTY LEVELS IN WRITTING THE PROGRAM
+# ALL THE 3 CODES ARE WRITTEN IN THE USER FRIENDLY FORMATE
+
+
+# Program 1: Factorial
+def factorial(n):
+    if n == 0: return 1
+    return n * factorial(n-1)
+
+n = int(input("Enter a number: "))
+print("Factorial =", factorial(n))
+
+# output:
+# Enter a number: 5
+# Factorial = 120
+
+
+
+
+# Program 2: Fibonacci
+def fib(n):
+    if n <= 1: return n
+    return fib(n-1) + fib(n-2)
+
+terms = int(input("Enter number of terms: "))
+for i in range(terms):
+    print(fib(i), end=" ")
+
+# output :
+# Enter number of terms: 6
+# 0 1 1 2 3 5
+
+
+
+
+
+# Program 3: Sum of digits
+def sum_digits(n):
+    if n == 0: return 0
+    return n%10 + sum_digits(n//10)
+
+n = int(input("Enter a number: "))
+print("Sum of digits =", sum_digits(n))
+
+# output :
+# Enter a number: 4
+# Sum of digits = 4
+
+
+
+
+
+
+
+
