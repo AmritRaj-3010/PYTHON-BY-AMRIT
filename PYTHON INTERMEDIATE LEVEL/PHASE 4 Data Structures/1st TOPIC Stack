@@ -8,6 +8,10 @@ print("Popped element:", stack.pop())  # pop
 print("Stack now:", stack)
 
 # output:
+# Stack after pushes: [10, 20, 30]
+# Popped element: 30
+# Stack now: [10, 20]
+
 
 
 # Program 2: User input stack
@@ -21,6 +25,13 @@ print("Popped element:", stack.pop())
 print("Stack after pop:", stack)
 
 # output:
+# How many elements to push? 1
+# Enter element 1: 10
+# Stack = [10]
+# Popped element: 10
+# Stack after pop: []
+
+
 
 
 # Program 3: Check empty stack
@@ -31,3 +42,4 @@ else:
     print("Stack has elements:", stack)
 
 # output:
+# Stack is empty
