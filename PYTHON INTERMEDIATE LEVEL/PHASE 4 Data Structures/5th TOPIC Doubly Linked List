@@ -1,0 +1,94 @@
+# Program 1: Create and traverse forward
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+# Create nodes
+n1 = Node(10)
+n2 = Node(20)
+n3 = Node(30)
+
+# Link nodes
+n1.next = n2
+n2.prev = n1
+n2.next = n3
+n3.prev = n2
+
+# Traverse forward
+temp = n1
+print("Forward traversal:", end=" ")
+while temp:
+    print(temp.data, end=" <-> ")
+    temp = temp.next
+
+# output:
+# Forward traversal: 10 <-> 20 <-> 30 <->
+
+
+
+
+
+# Program 2: Traverse backward
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+# Create nodes
+n1 = Node(10)
+n2 = Node(20)
+n3 = Node(30)
+
+# Link nodes
+n1.next = n2
+n2.prev = n1
+n2.next = n3
+n3.prev = n2
+
+# Traverse backward
+temp = n3
+print("Backward traversal:", end=" ")
+while temp:
+    print(temp.data, end=" <-> ")
+    temp = temp.prev
+
+# output:
+# Backward traversal: 30 <-> 20 <-> 10 <->
+
+
+
+
+# Program 3: Insert a node in the middle
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+# Create nodes
+n1 = Node(10)
+n2 = Node(30)
+
+# Link nodes
+n1.next = n2
+n2.prev = n1
+
+# Insert new node between n1 and n2
+new_node = Node(20)
+new_node.prev = n1
+new_node.next = n2
+n1.next = new_node
+n2.prev = new_node
+
+# Traverse forward
+temp = n1
+print("List after insertion:", end=" ")
+while temp:
+    print(temp.data, end=" <-> ")
+    temp = temp.next
+
+# output:
+#  List after insertion: 10 <-> 20 <-> 30 <-> 
