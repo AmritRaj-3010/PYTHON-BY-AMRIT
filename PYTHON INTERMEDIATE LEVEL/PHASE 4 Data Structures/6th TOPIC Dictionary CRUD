@@ -1,0 +1,47 @@
+# Program 1: Create and display dictionary
+students = {"Amrit": 20, "Ravi": 22}
+print("Initial dictionary:", students)
+
+# Add new key-value pair
+students["Sita"] = 19
+print("After adding Sita:", students)
+
+# output:
+# Initial dictionary: {'Amrit': 20, 'Ravi': 22}
+# After adding Sita: {'Amrit': 20, 'Ravi': 22, 'Sita': 19}
+
+
+
+
+
+# Program 2: Update and delete entries
+students = {"Amrit": 20, "Ravi": 22, "Sita": 19}
+
+# Update value
+students["Amrit"] = 21
+print("After updating Amrit's age:", students)
+
+# Delete key
+del students["Ravi"]
+print("After deleting Ravi:", students)
+
+# output:
+# After updating Amrit's age: {'Amrit': 21, 'Ravi': 22, 'Sita': 19}
+# After deleting Ravi: {'Amrit': 21, 'Sita': 19}
+
+
+
+
+
+# Program 3: Search for a key
+students = {"Amrit": 21, "Sita": 19}
+
+name = input("Enter student name to search: ")
+if name in students:
+    print(f"{name}'s age is {students[name]}")
+else:
+    print(f"{name} not found in dictionary")
+
+# output:
+# Enter student name to search: Amrit
+# Amrit's age is 21
