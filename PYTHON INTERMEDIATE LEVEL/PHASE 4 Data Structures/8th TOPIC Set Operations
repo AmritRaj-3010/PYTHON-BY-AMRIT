@@ -1,0 +1,43 @@
+# Program 1: Union of two sets
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+print("Set A:", A)
+print("Set B:", B)
+print("Union (A | B):", A | B)
+
+# output:
+# Set A: {1, 2, 3, 4}
+# Set B: {3, 4, 5, 6}
+# Union (A | B): {1, 2, 3, 4, 5, 6}
+
+
+
+# Program 2: Intersection of two sets
+A = {10, 20, 30, 40}
+B = {30, 40, 50, 60}
+print("Set A:", A)
+print("Set B:", B)
+print("Intersection (A & B):", A & B)
+
+# output:
+# Set A: {40, 10, 20, 30}
+# Set B: {40, 50, 60, 30}
+# Intersection (A & B): {40, 30}
+
+
+
+
+# Program 3: Difference of two sets
+A = {"apple", "banana", "cherry"}
+B = {"banana", "cherry", "date"}
+print("Set A:", A)
+print("Set B:", B)
+print("Difference (A - B):", A - B)
+print("Difference (B - A):", B - A)
+
+# output:
+# Set A: {'apple', 'banana', 'cherry'}
+# Set B: {'date', 'banana', 'cherry'}
+# Difference (A - B): {'apple'}
+# Difference (B - A): {'date'}
+
