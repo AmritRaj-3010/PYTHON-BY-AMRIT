@@ -1,0 +1,71 @@
+# Program 1: Student records using nested dictionary
+school = {
+    "Class1": {"Amrit": 20, "Ravi": 22},
+    "Class2": {"Sita": 19, "Gita": 21}
+}
+
+print("📘 School Data:")
+print(school)  # prints whole dictionary
+print("\n👩‍🎓 Class1 students:", school["Class1"])
+print("🎯 Age of Amrit in Class1:", school["Class1"]["Amrit"])
+
+# output:
+📘 School Data:
+{'Class1': {'Amrit': 20, 'Ravi': 22}, 'Class2': {'Sita': 19, 'Gita': 21}}
+
+👩‍🎓 Class1 students: {'Amrit': 20, 'Ravi': 22}
+🎯 Age of Amrit in Class1: 20
+
+
+
+
+
+
+# Program 2: Update nested value
+school = {
+    "Class1": {"Amrit": 20, "Ravi": 22},
+    "Class2": {"Sita": 19, "Gita": 21}
+}
+
+# Update Ravi's age
+school["Class1"]["Ravi"] = 23
+print("✅ After updating Ravi's age:", school)
+
+# Add new student in Class2
+school["Class2"]["Ananya"] = 20
+print("➕ After adding Ananya:", school)
+
+# output:
+✅ After updating Ravi's age: {'Class1': {'Amrit': 20, 'Ravi': 23}, 'Class2': {'Sita': 19, 'Gita': 21}}
+➕ After adding Ananya: {'Class1': {'Amrit': 20, 'Ravi': 23}, 'Class2': {'Sita': 19, 'Gita': 21, 'Ananya': 20}}
+
+
+
+
+
+
+# Program 3: Iterate through nested dictionary
+school = {
+    "Class1": {"Amrit": 20, "Ravi": 22},
+    "Class2": {"Sita": 19, "Gita": 21}
+}
+
+print("📋 School Records:")
+for classname, students in school.items():
+    print(f"\n{classname} students:")
+    for name, age in students.items():
+        print(f" - {name}: {age} years old")
+
+# output:
+📋 School Records:
+
+Class1 students:
+ - Amrit: 20 years old
+ - Ravi: 22 years old
+
+Class2 students:
+ - Sita: 19 years old
+ - Gita: 21 years old
+
+
+
