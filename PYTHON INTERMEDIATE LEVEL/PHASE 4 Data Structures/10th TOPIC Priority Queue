@@ -1,0 +1,67 @@
+# Program 1: Min-heap (default behavior of heapq)
+import heapq
+
+pq = []
+heapq.heappush(pq, 10)
+heapq.heappush(pq, 5)
+heapq.heappush(pq, 20)
+
+print("Priority Queue (min-heap):", pq)
+print("Smallest element popped:", heapq.heappop(pq))
+print("Queue after pop:", pq)
+
+# output:
+# Priority Queue (min-heap): [5, 10, 20]
+# Smallest element popped: 5
+# Queue after pop: [10, 20]
+
+
+
+
+
+
+# Program 2: Max-heap (using negative values trick)
+import heapq
+
+pq = []
+heapq.heappush(pq, -10)  # store negative to simulate max-heap
+heapq.heappush(pq, -5)
+heapq.heappush(pq, -20)
+
+print("Priority Queue (max-heap):", [-x for x in pq])  # convert back to positive
+print("Largest element popped:", -heapq.heappop(pq))
+print("Queue after pop:", [-x for x in pq])
+
+# output:
+# Priority Queue (max-heap): [20, 5, 10]
+# Largest element popped: 20
+# Queue after pop: [10, 5]
+
+
+
+
+
+
+# Program 3: User input priority queue
+import heapq
+
+pq = []
+n = int(input("How many values to insert? "))
+for i in range(n):
+    val = int(input(f"Enter value {i+1}: "))
+    heapq.heappush(pq, val)
+
+print("Priority Queue (min-heap):", pq)
+print("Smallest element popped:", heapq.heappop(pq))
+print("Queue after pop:", pq)
+
+# output:
+# How many values to insert? 4
+# Enter value 1: 34
+# Enter value 2: 45
+# Enter value 3: 56
+# Enter value 4: 67
+# Priority Queue (min-heap): [34, 45, 56, 67]
+# Smallest element popped: 34
+# Queue after pop: [45, 67, 56]
+
