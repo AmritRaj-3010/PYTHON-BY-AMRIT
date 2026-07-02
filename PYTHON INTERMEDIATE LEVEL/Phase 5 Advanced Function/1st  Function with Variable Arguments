@@ -1,0 +1,35 @@
+# Program 1: Using *args to add numbers
+def add_numbers(*args):
+    return sum(args)
+
+print("Sum of 10, 20, 30 =", add_numbers(10, 20, 30))
+
+# outout:
+# Sum of 10, 20, 30 = 60
+
+
+
+# Program 2: Using **kwargs to show details
+def show_details(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+show_details(name="Amrit", age=21, city="Patna")
+
+# output:
+# name: Amrit
+# age: 21
+# city: Patna
+
+
+
+# Program 3: Combining *args and **kwargs
+def display(*args, **kwargs):
+    print("Positional arguments:", args)
+    print("Keyword arguments:", kwargs)
+
+display(1, 2, 3, subject="Python", level="Intermediate")
+
+# output:
+# Positional arguments: (1, 2, 3)
+# Keyword arguments: {'subject': 'Python', 'level': 'Intermediate'}
