@@ -1,0 +1,29 @@
+# Program 1: Square numbers
+nums = [1, 2, 3, 4]
+squares = list(map(lambda x: x**2, nums))
+print("Squares:", squares)
+
+# output:
+# Squares: [1, 4, 9, 16]
+
+
+
+
+# Program 2: Convert words to uppercase
+words = ["amrit", "python", "game"]
+upper = list(map(lambda w: w.upper(), words))
+print("Uppercase words:", upper)
+
+# output:
+# Uppercase words: ['AMRIT', 'PYTHON', 'GAME']
+
+
+
+
+# Program 3: Double values
+nums = [5, 10, 15]
+double = list(map(lambda x: x*2, nums))
+print("Doubled:", double)
+
+# output:
+# Doubled: [10, 20, 30]
