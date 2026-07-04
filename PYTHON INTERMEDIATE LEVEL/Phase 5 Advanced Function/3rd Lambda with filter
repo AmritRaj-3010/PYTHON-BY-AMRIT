@@ -1,0 +1,29 @@
+# Program 1: Filter even numbers
+nums = [1, 2, 3, 4, 5, 6]
+evens = list(filter(lambda x: x % 2 == 0, nums))
+print("Even numbers:", evens)
+
+# output:
+# Even numbers: [2, 4, 6]
+
+
+
+
+# Program 2: Filter words starting with 'p'
+words = ["python", "java", "php", "c++"]
+p_words = list(filter(lambda w: w.startswith("p"), words))
+print("Words starting with p:", p_words)
+
+# output:
+# Words starting with p: ['python', 'php']
+
+
+
+
+# Program 3: Filter numbers greater than 10
+nums = [5, 12, 7, 20, 3]
+greater = list(filter(lambda x: x > 10, nums))
+print("Numbers > 10:", greater)
+
+# output:
+# Numbers > 10: [12, 20]
