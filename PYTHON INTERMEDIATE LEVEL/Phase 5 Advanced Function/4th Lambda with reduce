@@ -1,0 +1,32 @@
+from functools import reduce
+
+# Program 1: Sum of numbers
+nums = [1, 2, 3, 4]
+total = reduce(lambda x, y: x + y, nums)
+print("Sum:", total)
+
+# output:
+# Sum: 10
+
+
+
+
+# Program 2: Product of numbers
+nums = [2, 3, 4]
+product = reduce(lambda x, y: x * y, nums)
+print("Product:", product)
+
+# output:
+# Product: 24
+
+
+
+
+
+# Program 3: Longest word
+words = ["python", "java", "javascript", "c"]
+longest = reduce(lambda a, b: a if len(a) > len(b) else b, words)
+print("Longest word:", longest)
+
+# output:
+# Longest word: javascript
