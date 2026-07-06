@@ -1,0 +1,56 @@
+# Program 1: Simple decorator
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print("Calling function:", func.__name__)
+        return func(*args, **kwargs)
+    return wrapper
+
+@logger
+def greet(name):
+    print("Hello,", name)
+
+greet("Amrit")
+
+# output:
+# Calling function: greet
+# Hello, Amrit
+
+
+
+
+# Program 2: Decorator with arguments
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print("Arguments:", args, kwargs)
+        return func(*args, **kwargs)
+    return wrapper
+
+@logger
+def add(a, b):
+    return a + b
+
+print("Result:", add(5, 10))
+
+# output:
+# Arguments: (5, 10) {}
+# Result: 15
+
+
+
+
+# Program 3: Multiple decorated functions
+@logger
+def square(x): return x*x
+
+@logger
+def cube(x): return x*x*x
+
+print("Square:", square(4))
+print("Cube:", cube(3))
+
+# output:
+# Arguments: (4,) {}
+# Square: 16
+# Arguments: (3,) {}
+# Cube: 27
+
