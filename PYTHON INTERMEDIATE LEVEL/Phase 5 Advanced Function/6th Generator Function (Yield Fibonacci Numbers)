@@ -1,0 +1,42 @@
+# Program 1: Simple Fibonacci generator
+def fib(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a+b
+
+print("Fibonacci:", list(fib(5)))
+
+# output:
+# Fibonacci: [0, 1, 1, 2, 3]
+
+
+
+
+# Program 2: Print values one by one
+for num in fib(7):
+    print("Next Fibonacci:", num)
+
+# output:
+# Next Fibonacci: 0
+# Next Fibonacci: 1
+# Next Fibonacci: 1
+# Next Fibonacci: 2
+# Next Fibonacci: 3
+# Next Fibonacci: 5
+# Next Fibonacci: 8
+
+
+
+
+
+# Program 3: Generator with user input
+n = int(input("How many Fibonacci numbers? "))
+for num in fib(n):
+    print(num, end=" ")
+
+# output:
+# How many Fibonacci numbers? 7
+# 0 1 1 2 3 5 8
+
+
