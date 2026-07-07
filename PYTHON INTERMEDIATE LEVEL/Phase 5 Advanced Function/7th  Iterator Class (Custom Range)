@@ -1,0 +1,78 @@
+# Program 1: Custom range iterator
+class MyRange:
+    def __init__(self, start, end):
+        self.current = start
+        self.end = end
+    def __iter__(self): return self
+    def __next__(self):
+        if self.current > self.end:
+            raise StopIteration
+        val = self.current
+        self.current += 1
+        return val
+
+for num in MyRange(1, 5):
+    print(num)
+
+# output:
+# 1
+# 2
+# 3
+# 4
+# 5
+
+
+
+
+
+
+# Program 2: Step size iterator
+class StepRange:
+    def __init__(self, start, end, step):
+        self.current = start
+        self.end = end
+        self.step = step
+    def __iter__(self): return self
+    def __next__(self):
+        if self.current > self.end:
+            raise StopIteration
+        val = self.current
+        self.current += self.step
+        return val
+
+for num in StepRange(2, 10, 2):
+    print(num)
+
+# output:
+# 2
+# 4
+# 6
+# 10
+
+
+
+
+
+
+# Program 3: Reverse iterator
+class ReverseRange:
+    def __init__(self, start, end):
+        self.current = start
+        self.end = end
+    def __iter__(self): return self
+    def __next__(self):
+        if self.current < self.end:
+            raise StopIteration
+        val = self.current
+        self.current -= 1
+        return val
+
+for num in ReverseRange(5, 1):
+    print(num)
+
+# output:
+# 5
+# 4
+# 3
+# 2
+
