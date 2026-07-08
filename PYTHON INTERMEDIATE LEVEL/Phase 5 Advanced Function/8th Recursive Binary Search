@@ -1,0 +1,47 @@
+# Program 1: Recursive binary search
+def binary_search(arr, low, high, target):
+    if low > high: return -1
+    mid = (low + high) // 2
+    if arr[mid] == target: return mid
+    elif arr[mid] > target: return binary_search(arr, low, mid-1, target)
+    else: return binary_search(arr, mid+1, high, target)
+
+arr = [1, 3, 5, 7, 9]
+print("Index of 7:", binary_search(arr, 0, len(arr)-1, 7))
+
+# output:
+# Index of 7: 3
+
+
+
+
+# Program 2: Search not found
+print("Index of 4:", binary_search(arr, 0, len(arr)-1, 4))
+
+# output:
+# Index of 4: -1
+
+
+
+
+
+# Program 3: User input search
+nums = [2, 4, 6, 8, 10]
+target = int(input("Enter number to search: "))
+pos = binary_search(nums, 0, len(nums)-1, target)
+print("Found at index" if pos != -1 else "Not found")
+
+# output:
+# Enter number to search: 8
+# Found at index
+
+# Enter number to search: 14
+# Not found
+
+
+
+
+
+
+
+
