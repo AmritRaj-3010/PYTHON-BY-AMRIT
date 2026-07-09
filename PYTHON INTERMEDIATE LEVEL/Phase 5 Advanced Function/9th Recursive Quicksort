@@ -1,0 +1,34 @@
+# Program 1: Simple quicksort
+def quicksort(arr):
+    if len(arr) <= 1: return arr
+    pivot = arr[0]
+    left = [x for x in arr[1:] if x <= pivot]
+    right = [x for x in arr[1:] if x > pivot]
+    return quicksort(left) + [pivot] + quicksort(right)
+
+print("Sorted:", quicksort([5, 3, 8, 1, 2]))
+
+# output:
+# Sorted: [1, 2, 3, 5, 8]
+
+
+
+
+# Program 2: Already sorted list
+print("Sorted:", quicksort([1, 2, 3, 4]))
+
+# output:
+# Sorted: [1, 2, 3, 4]
+
+
+
+
+
+# Program 3: User input list
+nums = list(map(int, input("Enter numbers separated by space: ").split()))
+print("Sorted list:", quicksort(nums))
+
+# output:
+# Enter numbers separated by space: 2
+# Sorted list: [2]
+
