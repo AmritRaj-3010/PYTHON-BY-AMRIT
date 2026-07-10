@@ -1,0 +1,64 @@
+# Program 1: Fibonacci with memoization
+memo = {}
+def fib(n):
+    if n in memo: return memo[n]
+    if n <= 1: return n
+    memo[n] = fib(n-1) + fib(n-2)
+    return memo[n]
+
+print("Fibonacci(10):", fib(10))
+
+# output:
+# Fibonacci(10): 55
+
+
+
+
+# Program 2: Factorial with memoization
+memo = {}
+def fact(n):
+    if n in memo: return memo[n]
+    if n <= 1: return 1
+    memo[n] = n * fact(n-1)
+    return memo[n]
+
+print("Factorial(5):", fact(5))
+
+# output:
+# Factorial(5): 120
+
+
+
+
+# Program 3: Power calculation with memoization
+memo = {}
+
+def power(base, exp):
+    # If already calculated, return from memo
+    if (base, exp) in memo:
+        return memo[(base, exp)]
+    
+    # Base cases
+    if exp == 0:
+        return 1
+    if exp == 1:
+        return base
+    
+    # Recursive calculation
+    result = base * power(base, exp - 1)
+    memo[(base, exp)] = result   # Store in memo
+    return result
+
+# User-friendly interaction
+b = int(input("Enter base number: "))
+e = int(input("Enter exponent: "))
+print(f"{b}^{e} =", power(b, e))
+
+# Run again to see memoization effect
+print(f"Reusing memo: {b}^{e} =", power(b, e))
+
+# output:
+# Enter base number: 15
+# Enter exponent: 2
+# 15^2 = 225
+# Reusing memo: 15^2 = 225
