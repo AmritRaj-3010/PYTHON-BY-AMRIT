@@ -1,0 +1,109 @@
+# Program 1: Simple copy entire file
+# User enters source and destination filenames, program copies all content
+src = input("Enter source filename: ")
+dest = input("Enter destination filename: ")
+
+try:
+    with open(src, "r") as f1, open(dest, "w") as f2:
+        f2.write(f1.read())
+    print(f" Copied contents from {src} to {dest}")
+except FileNotFoundError:
+    print(" Source file not found!")
+
+# output:
+# Enter source filename: amrit.bin
+# Enter destination filename: ansh.bin
+#  Copied contents from amrit.bin to ansh.bin
+
+
+
+
+
+# Program 2: Copy line by line
+# Reads source file line by line and writes to destination
+src = input("Enter source filename: ")
+dest = input("Enter destination filename: ")
+
+try:
+    with open(src, "r") as f1, open(dest, "w") as f2:
+        for line in f1:
+            f2.write(line)
+    print(f" Line-by-line copy done from {src} to {dest}")
+except FileNotFoundError:
+    print(" Source file not found!")
+
+# output:
+# Enter source filename: amrit.bin
+# Enter destination filename: ansh.bin
+#  Line-by-line copy done from amrit.bin to ansh.bin
+
+
+
+
+
+
+# Program 3: Copy with line numbers
+# Adds line numbers while copying
+src = input("Enter source filename: ")
+dest = input("Enter destination filename: ")
+
+try:
+    with open(src, "r") as f1, open(dest, "w") as f2:
+        for i, line in enumerate(f1, start=1):
+            f2.write(f"{i}: {line}")
+    print(f" Copied with line numbers from {src} to {dest}")
+except FileNotFoundError:
+    print(" Source file not found!")
+
+# output:
+# Enter source filename: ansh.bin
+# Enter destination filename: amrit.bin
+#  Copied with line numbers from ansh.bin to amrit.bin
+
+
+
+
+
+# Program 4: Append source file contents to destination file
+# Instead of overwriting, appends content
+src = input("Enter source filename: ")
+dest = input("Enter destination filename: ")
+
+try:
+    with open(src, "r") as f1, open(dest, "a") as f2:
+        f2.write("\n--- Appended Content ---\n")
+        f2.write(f1.read())
+    print(f" Appended contents of {src} into {dest}")
+except FileNotFoundError:
+    print(" Source file not found!")
+
+# output:
+# Enter source filename: amrit.bin
+# Enter destination filename: ansh.bin
+#  Appended contents of amrit.bin into ansh.bin
+
+
+
+
+
+# Program 5: Copy only specific word occurrences
+# User enters a word, program copies only lines containing that word
+src = input("Enter source filename: ")
+dest = input("Enter destination filename: ")
+word = input("Enter word to filter: ")
+
+try:
+    with open(src, "r") as f1, open(dest, "w") as f2:
+        for line in f1:
+            if word in line:
+                f2.write(line)
+    print(f" Copied lines containing '{word}' from {src} to {dest}")
+except FileNotFoundError:
+    print(" Source file not found!")
+
+# output:
+# Enter source filename: ansh.bin
+# Enter destination filename: amrit.bin
+# Enter word to filter: IS
+#  Copied lines containing 'IS' from ansh.bin to amrit.bin
+
