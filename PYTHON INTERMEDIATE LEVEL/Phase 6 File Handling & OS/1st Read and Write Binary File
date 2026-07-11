@@ -1,0 +1,98 @@
+# Program 1: Write binary data to a file
+# User enters text, program saves it in binary format
+data = input("Enter some text to save in binary: ")
+filename = input("Enter filename to save (e.g., data.bin): ")
+
+with open(filename, "wb") as f:
+    f.write(data.encode())   # encode string to bytes
+print(f" Data written to {filename}")
+
+# output:
+# Enter some text to save in binary: I AM AMRIT RAJ
+# Enter filename to save (e.g., data.bin): amrit.bin
+#  Data written to amrit.bin
+
+
+
+
+
+# Program 2: Read binary data from a file
+# User enters filename, program reads and prints content
+filename = input("Enter filename to read (e.g., data.bin): ")
+
+try:
+    with open(filename, "rb") as f:
+        content = f.read()
+        print(" File content:", content.decode())
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename to read (e.g., data.bin): amrit.bin
+#  File content: I AM AMRIT RAJ
+
+
+
+
+
+
+# Program 3: Append binary data to a file
+# User enters extra text, program appends it to existing binary file
+filename = input("Enter filename to append (e.g., data.bin): ")
+extra = input("Enter extra text to append: ")
+
+try:
+    with open(filename, "ab") as f:
+        f.write(extra.encode())
+    print(f" Extra data appended to {filename}")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename to append (e.g., data.bin): amrit.bin
+# Enter extra text to append:  AND I AM 21 YEARS OLD
+#  Extra data appended to amrit.bin
+
+
+
+
+
+# Program 4: Copy binary file
+# User enters source and destination filenames, program copies content
+src = input("Enter source filename: ")
+dest = input("Enter destination filename: ")
+
+try:
+    with open(src, "rb") as f1, open(dest, "wb") as f2:
+        f2.write(f1.read())
+    print(f" Copied {src} to {dest}")
+except FileNotFoundError:
+    print(" Source file not found!")
+
+# output:
+# Enter source filename: amrit.bin
+# Enter destination filename: amrit.bin
+#  Copied amrit.bin to amrit.bin
+
+
+
+
+
+
+# Program 5: Read binary file in chunks
+# User enters filename, program reads file in small parts
+filename = input("Enter filename to read in chunks: ")
+
+try:
+    with open(filename, "rb") as f:
+        while True:
+            chunk = f.read(5)  # read 5 bytes at a time
+            if not chunk:
+                break
+            print("Chunk:", chunk.decode(errors="ignore"))
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename to read in chunks: amrit.bin
+
