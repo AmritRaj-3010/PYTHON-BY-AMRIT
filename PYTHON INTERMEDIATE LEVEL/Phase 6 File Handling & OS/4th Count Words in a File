@@ -1,0 +1,107 @@
+# Program 1: Count total words in a file
+# User enters filename, program counts all words
+filename = input("Enter filename: ")
+
+try:
+    with open(filename, "r") as f:
+        text = f.read()
+        words = text.split()
+        print(" Total words:", len(words))
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: amrit.bin
+#  Total words: 0
+
+
+
+
+
+# Program 2: Count total lines in a file
+# User enters filename, program counts all lines
+filename = input("Enter filename: ")
+
+try:
+    with open(filename, "r") as f:
+        lines = f.readlines()
+        print(" Total lines:", len(lines))
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: ansh.bin
+# Total lines: 2
+
+
+
+
+
+
+# Program 3: Count total characters in a file
+# User enters filename, program counts all characters
+filename = input("Enter filename: ")
+
+try:
+    with open(filename, "r") as f:
+        text = f.read()
+        print(" Total characters:", len(text))
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: aman.bin
+# Total characters: 26
+
+
+
+
+
+
+# Program 4: Count frequency of each word
+# User enters filename, program shows word frequency
+filename = input("Enter filename: ")
+
+try:
+    with open(filename, "r") as f:
+        text = f.read().lower()
+        words = text.split()
+        freq = {}
+        for w in words:
+            freq[w] = freq.get(w, 0) + 1
+        print(" Word frequencies:")
+        for word, count in freq.items():
+            print(f"{word}: {count}")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: aman.bin
+#  Word frequencies:
+# ---: 2
+# appended: 1
+# content: 1
+
+
+
+
+
+
+# Program 5: Count occurrences of a specific word
+# User enters filename and word, program counts how many times it appears
+filename = input("Enter filename: ")
+search_word = input("Enter word to search: ").lower()
+
+try:
+    with open(filename, "r") as f:
+        text = f.read().lower()
+        words = text.split()
+        count = words.count(search_word)
+        print(f" The word '{search_word}' appears {count} times.")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: amrit.bin
+# Enter word to search: am
+#  The word 'am' appears 2 times.
