@@ -1,0 +1,123 @@
+# Program 1: Search if a word exists in a file
+# User enters filename and word, program checks if word is present
+filename = input("Enter filename: ")
+search_word = input("Enter word to search: ")
+
+try:
+    with open(filename, "r") as f:
+        text = f.read()
+        if search_word in text:
+            print(f" The word '{search_word}' exists in {filename}")
+        else:
+            print(f" The word '{search_word}' does not exist in {filename}")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: amrit.bin
+# Enter word to search: B.Tech
+#  The word 'B.Tech' exists in amrit.bin
+
+
+
+
+
+# Program 2: Find all occurrences of a word
+# User enters filename and word, program prints all line numbers where word appears
+filename = input("Enter filename: ")
+search_word = input("Enter word to search: ")
+
+try:
+    with open(filename, "r") as f:
+        found = False
+        for i, line in enumerate(f, start=1):
+            if search_word in line:
+                print(f" Found '{search_word}' in line {i}: {line.strip()}")
+                found = True
+        if not found:
+            print(f" The word '{search_word}' not found in {filename}")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: ansh.bin
+# Enter word to search: Amrit
+#  The word 'Amrit' not found in ansh.bin
+
+
+
+
+
+
+# Program 3: Case-insensitive search
+# User enters filename and word, program searches ignoring case
+filename = input("Enter filename: ")
+search_word = input("Enter word to search (case-insensitive): ").lower()
+
+try:
+    with open(filename, "r") as f:
+        text = f.read().lower()
+        if search_word in text:
+            print(f" The word '{search_word}' exists (case-insensitive search)")
+        else:
+            print(f" The word '{search_word}' does not exist")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: aman.bin
+# Enter word to search (case-insensitive): amrit
+#  The word 'amrit' does not exist
+
+
+
+
+
+
+
+# Program 4: Count occurrences of a word
+# User enters filename and word, program counts how many times it appears
+filename = input("Enter filename: ")
+search_word = input("Enter word to count: ")
+
+try:
+    with open(filename, "r") as f:
+        text = f.read()
+        count = text.count(search_word)
+        print(f" The word '{search_word}' appears {count} times in {filename}")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: aman.bin
+# Enter word to count: a
+#  The word 'a' appears 0 times in aman.bin
+
+
+
+
+
+
+# Program 5: Highlight word occurrences in file content
+# User enters filename and word, program prints file content with word highlighted
+filename = input("Enter filename: ")
+search_word = input("Enter word to highlight: ")
+
+try:
+    with open(filename, "r") as f:
+        text = f.read()
+        highlighted = text.replace(search_word, f"[{search_word}]")
+        print(" File content with highlights:\n")
+        print(highlighted)
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter filename: aman.bin
+# Enter word to highlight: aman
+#  File content with highlights:
+# 
+# --- Appended Content ---
+# 
+# 
+
