@@ -1,0 +1,132 @@
+# Program 1: Simple rename
+# User enters old filename and new filename, program renames the file
+import os
+
+old_name = input("Enter current filename: ")
+new_name = input("Enter new filename: ")
+
+try:
+    os.rename(old_name, new_name)
+    print(f" File renamed from {old_name} to {new_name}")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter current filename: amrit.bin
+# Enter new filename: achal.bin
+#  File renamed from amrit.bin to achal.bin
+
+
+
+
+
+# Program 2: Rename with timestamp
+# Adds current time to the new filename
+import os, time
+
+old_name = input("Enter current filename: ")
+new_name = input("Enter new filename (without extension): ")
+ext = input("Enter file extension (e.g., .txt): ")
+
+timestamp = time.strftime("%Y%m%d_%H%M%S")
+final_name = f"{new_name}_{timestamp}{ext}"
+
+try:
+    os.rename(old_name, final_name)
+    print(f" File renamed to {final_name}")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter current filename: ansh.bin
+# Enter new filename (without extension): ananya
+# Enter file extension (e.g., .txt): .bin
+#  File renamed to ananya_20260624_110334.bin
+
+
+
+
+
+
+# Program 3: Change file extension
+# User enters filename and new extension, program renames with new extension
+import os
+
+old_name = input("Enter current filename: ")
+new_ext = input("Enter new extension (e.g., .log): ")
+
+if "." in old_name:
+    base = old_name.split(".")[0]
+    new_name = base + new_ext
+else:
+    new_name = old_name + new_ext
+
+try:
+    os.rename(old_name, new_name)
+    print(f" File renamed to {new_name}")
+except FileNotFoundError:
+    print(" File not found!")
+
+# output:
+# Enter current filename: aman.bin
+# Enter new extension (e.g., .log): .txt
+#  File renamed to aman.txt
+
+
+
+
+
+
+# Program 4: Rename multiple files in a folder
+# User enters folder name, program renames all files with prefix
+import os
+
+folder = input("Enter folder name: ")
+prefix = input("Enter prefix for files: ")
+
+try:
+    files = os.listdir(folder)
+    for i, fname in enumerate(files, start=1):
+        old_path = os.path.join(folder, fname)
+        new_path = os.path.join(folder, f"{prefix}_{i}.txt")
+        os.rename(old_path, new_path)
+    print(f" Renamed {len(files)} files in {folder}")
+except FileNotFoundError:
+    print(" Folder not found!")
+
+# output:
+# Enter current filename: achal.bin
+# Enter new extension (e.g., .log): .txt
+#  File renamed to achal.txt
+
+
+
+
+
+# Program 5: Safe rename with check
+# Ensures new filename does not already exist
+import os
+
+old_name = input("Enter current filename: ")
+new_name = input("Enter new filename: ")
+
+if os.path.exists(new_name):
+    print(" New filename already exists. Rename aborted.")
+else:
+    try:
+        os.rename(old_name, new_name)
+        print(f" File renamed from {old_name} to {new_name}")
+    except FileNotFoundError:
+        print(" File not found!")
+
+# output:
+# Enter current filename: achal.bin
+# Enter new extension (e.g., .log): .txt
+# Enter folder name: abhay
+# Enter prefix for files: Mr.
+#  Folder not found!
+# Enter current filename: aman.txt
+
+
+
+
