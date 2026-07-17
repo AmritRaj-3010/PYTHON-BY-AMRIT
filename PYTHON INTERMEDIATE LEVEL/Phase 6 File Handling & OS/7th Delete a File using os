@@ -1,0 +1,106 @@
+# # Program 1: Simple file delete
+# # User enters filename, program deletes the file
+# import os
+
+# filename = input("Enter filename to delete: ")
+
+# try:
+#     os.remove(filename)
+#     print(f" File '{filename}' deleted successfully.")
+# except FileNotFoundError:
+#     print(" File not found!")
+
+# # output:
+# # Enter filename to delete: anachal
+# #  File 'anachal' deleted successfully.
+
+
+
+
+# # Program 2: Delete only if file exists
+# # Checks existence before deleting
+# import os
+
+# filename = input("Enter filename to delete: ")
+
+# if os.path.exists(filename):
+#     os.remove(filename)
+#     print(f" File '{filename}' deleted successfully.")
+# else:
+#     print(" File not found!")
+
+# # output:
+# # Enter filename to delete: ankit
+# #  File 'ankit' deleted successfully.
+
+
+
+
+
+# # Program 3: Delete multiple files entered by user
+# # User enters filenames separated by space, program deletes all
+# import os
+
+# files = input("Enter filenames separated by space: ").split()
+
+# for fname in files:
+#     if os.path.exists(fname):
+#         os.remove(fname)
+#         print(f" Deleted {fname}")
+#     else:
+#         print(f" File not found: {fname}")
+
+# # output:
+# # Enter filenames separated by space: achal.txt
+# #  Deleted achal.txt
+
+
+
+
+
+# Program 4: Delete files inside a folder
+# User enters folder name, program deletes all files inside it
+import os
+
+folder = input("Enter folder name: ")
+
+try:
+    files = os.listdir(folder)
+    for fname in files:
+        path = os.path.join(folder, fname)
+        if os.path.isfile(path):
+            os.remove(path)
+            print(f" Deleted {path}")
+    print(f" All files in {folder} deleted.")
+except FileNotFoundError:
+    print(" Folder not found!")
+
+# output:
+# Enter folder name: abhay
+#  Deleted abhay\chaman
+#  All files in abhay deleted.
+
+
+
+
+# Program 5: Safe delete with confirmation
+# Asks user before deleting the file
+import os
+
+filename = input("Enter filename to delete: ")
+
+if os.path.exists(filename):
+    confirm = input(f" Are you sure you want to delete '{filename}'? (yes/no): ")
+    if confirm.lower() == "yes":
+        os.remove(filename)
+        print(f" File '{filename}' deleted.")
+    else:
+        print(" Deletion cancelled.")
+else:
+    print(" File not found!")
+
+# output:
+# Enter filename to delete: chaman
+#  File not found!
+
+
