@@ -1,0 +1,123 @@
+# Program 1: List all files in a directory
+# User enters folder name, program lists all files
+import os
+
+folder = input("Enter folder name: ")
+
+try:
+    files = os.listdir(folder)
+    print(f" Files in {folder}:")
+    for f in files:
+        print(f)
+except FileNotFoundError:
+    print(" Folder not found!")
+
+# output:
+# Enter folder name: abhaya
+#  Files in abhaya:
+
+
+
+
+
+
+# Program 2: List only files (ignore folders)
+# User enters folder name, program lists only files
+import os
+
+folder = input("Enter folder name: ")
+
+try:
+    files = os.listdir(folder)
+    print(f" Files only in {folder}:")
+    for f in files:
+        if os.path.isfile(os.path.join(folder, f)):
+            print(f)
+except FileNotFoundError:
+    print(" Folder not found!")
+
+# output:
+# Enter folder name: abhaya
+#  Files only in abhaya:
+# aa
+# bb
+
+
+
+
+
+
+# Program 3: List files with a specific extension
+# User enters folder name and extension, program lists matching files
+import os
+
+folder = input("Enter folder name: ")
+ext = input("Enter extension (e.g., .txt): ")
+
+try:
+    files = os.listdir(folder)
+    print(f" Files with extension {ext} in {folder}:")
+    for f in files:
+        if f.endswith(ext):
+            print(f)
+except FileNotFoundError:
+    print(" Folder not found!")
+
+# output:
+# Enter folder name: abhaya
+# Enter extension (e.g., .txt): .bin
+#  Files with extension .bin in abhaya:
+
+
+
+
+
+
+# Program 4: List files with size
+# User enters folder name, program lists files with their sizes
+import os
+
+folder = input("Enter folder name: ")
+
+try:
+    files = os.listdir(folder)
+    print(f" Files with sizes in {folder}:")
+    for f in files:
+        path = os.path.join(folder, f)
+        if os.path.isfile(path):
+            size = os.path.getsize(path)
+            print(f"{f} - {size} bytes")
+except FileNotFoundError:
+    print(" Folder not found!")
+
+# output:
+# Enter folder name: abhaya
+#  Files with sizes in abhaya:
+# aa - 0 bytes
+# bb - 0 bytes
+
+
+
+
+
+
+# Program 5: List files recursively (including subfolders)
+# User enters folder name, program lists all files inside subfolders too
+import os
+
+folder = input("Enter folder name: ")
+
+try:
+    print(f" All files in {folder} (including subfolders):")
+    for root, dirs, files in os.walk(folder):
+        for f in files:
+            print(os.path.join(root, f))
+except FileNotFoundError:
+    print(" Folder not found!")
+
+# output:
+# Enter folder name: abhaya
+#  All files in abhaya (including subfolders):
+# abhaya\aa
+# abhaya\bb
+
