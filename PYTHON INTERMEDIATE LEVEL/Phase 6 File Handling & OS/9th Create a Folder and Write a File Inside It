@@ -1,0 +1,146 @@
+# Program 1: Create a new folder
+# User enters folder name, program creates it
+import os
+
+folder = input("Enter folder name to create: ")
+
+try:
+    os.mkdir(folder)
+    print(f" Folder '{folder}' created successfully.")
+except FileExistsError:
+    print(" Folder already exists!")
+
+# output:
+# Enter folder name to create: amrit
+#  Folder 'amrit' created successfully.
+
+
+
+
+
+
+# Program 2: Create folder and write a file inside it
+# User enters folder name and file name, program creates both
+import os
+
+folder = input("Enter folder name: ")
+filename = input("Enter file name (e.g., notes.txt): ")
+content = input("Enter content to write in the file: ")
+
+os.makedirs(folder, exist_ok=True)  # create folder if not exists
+path = os.path.join(folder, filename)
+
+with open(path, "w") as f:
+    f.write(content)
+
+print(f" File '{filename}' created inside folder '{folder}'")
+
+# output:
+# Enter folder name: ansh
+# Enter file name (e.g., notes.txt): .bin
+# Enter content to write in the file: ansh is younger brother of amrit
+#  File '.bin' created inside folder 'ansh'
+
+
+
+
+
+
+# Program 3: Create nested folders and file
+# User enters folder path and file name, program creates nested structure
+# Safe folder creation with file check
+import os
+
+folder_path = input("Enter folder path (e.g., ansh/bin): ")
+filename = input("Enter file name (e.g., notes.txt): ")
+content = input("Enter content: ")
+
+#  Create folder only if it doesn't exist
+if not os.path.exists(folder_path):
+    os.makedirs(folder_path)
+    print(f" Folder '{folder_path}' created.")
+else:
+    print(f" Folder '{folder_path}' already exists.")
+
+#  Create file inside folder
+path = os.path.join(folder_path, filename)
+with open(path, "w") as f:
+    f.write(content)
+
+print(f" File '{filename}' created inside '{folder_path}'")
+
+# output:
+# Enter folder path (e.g., ansh/bin): angad/bin
+# Enter file name (e.g., notes.txt): bin 
+# Enter content: mahatma gandhi was the great personality
+#  Folder 'angad/bin' created.
+#  File 'bin' created inside 'angad/bin'
+
+
+
+
+
+
+# Program 4: Write multiple lines into a file inside folder
+# User enters folder, file, and multiple lines
+# Program 4: Write multiple lines into a file inside folder (safe version)
+import os
+
+folder = input("Enter folder name: ")
+filename = input("Enter file name (e.g., notes.txt): ")
+
+#  Ensure folder exists
+os.makedirs(folder, exist_ok=True)
+
+path = os.path.join(folder, filename)
+
+#  Prevent error if a folder already exists with same name
+if os.path.isdir(path):
+    print(f"❌ Cannot create file '{filename}' because a folder with that name exists.")
+else:
+    print("Enter lines (type 'STOP' to finish):")
+    lines = []
+    while True:
+        line = input()
+        if line.strip().lower() == "stop":   # accepts STOP, stop, Stop
+            break
+        lines.append(line + "\n")
+
+    with open(path, "w") as f:
+        f.writelines(lines)
+
+    print(f" File '{filename}' created with {len(lines)} lines inside '{folder}'")
+
+# output:
+# Enter folder name: angad
+# Enter file name (e.g., notes.txt): bin.txt
+# Enter lines (type 'STOP' to finish):
+# i am amrit
+# i am ansh
+# i am ananya
+# i am ankit
+# STOP
+#  File 'bin.txt' created with 4 lines inside 'angad'
+
+
+
+
+
+
+# Program 5: Confirm file creation by listing folder contents
+# User enters folder name, program lists all files inside
+import os
+
+folder = input("Enter folder name: ")
+
+if os.path.exists(folder):
+    print(f" Files inside '{folder}':")
+    for f in os.listdir(folder):
+        print(f)
+else:
+    print(" Folder not found!")
+
+# output:
+# Enter folder name: angad
+#  Files inside 'angad':
+# bin
