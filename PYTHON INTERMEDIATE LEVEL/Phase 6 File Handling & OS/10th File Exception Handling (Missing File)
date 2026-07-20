@@ -1,0 +1,101 @@
+# Program 1: Handle missing file while reading
+# User enters filename, program tries to read and handles error
+filename = input("Enter filename to read: ")
+
+try:
+    with open(filename, "r") as f:
+        print(" File content:\n", f.read())
+except FileNotFoundError:
+    print(" Error: File not found!")
+
+# output:
+# Enter filename to read: bin.txt
+#  Error: File not found!
+
+
+
+
+
+
+# Program 2: Handle missing file while writing
+# User enters filename, program writes safely
+filename = input("Enter filename to write: ")
+content = input("Enter content to write: ")
+
+try:
+    with open(filename, "w") as f:
+        f.write(content)
+    print(f" Content written to {filename}")
+except Exception as e:
+    print(" Error occurred:", e)
+
+# output:
+# Enter filename to write: bin
+# Enter content to write: i am achal
+#  Content written to bin
+
+
+
+
+
+# Program 3: Handle missing file while appending
+# User enters filename, program appends safely
+filename = input("Enter filename to append: ")
+extra = input("Enter text to append: ")
+
+try:
+    with open(filename, "a") as f:
+        f.write("\n" + extra)
+    print(f" Text appended to {filename}")
+except FileNotFoundError:
+    print(" Error: File not found!")
+
+# output:
+# Enter filename to append: bin
+# Enter text to append: i need help
+#  Text appended to bin
+
+
+
+
+
+
+# Program 4: Safe file open with fallback
+# If file not found, creates a new file
+filename = input("Enter filename: ")
+
+try:
+    with open(filename, "r") as f:
+        print(" File content:\n", f.read())
+except FileNotFoundError:
+    print(" File not found, creating new file...")
+    with open(filename, "w") as f:
+        f.write("This is a new file created as fallback.")
+    print(f" New file '{filename}' created.")
+
+# output:
+# Enter filename: bin
+#  File content:
+#  i am achal
+# i need help
+
+
+
+
+
+
+
+# Program 5: Handle multiple missing files
+# User enters filenames separated by space, program checks each
+files = input("Enter filenames separated by space: ").split()
+
+for fname in files:
+    try:
+        with open(fname, "r") as f:
+            print(f" Content of {fname}:\n", f.read())
+    except FileNotFoundError:
+        print(f" Error: File '{fname}' not found!")
+
+# output:
+# Enter filenames separated by space: bin.txt
+#  Error: File 'bin.txt' not found!
