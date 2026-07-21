@@ -1,0 +1,77 @@
+# Program 1: Factorial of a number
+# User enters a number, program calculates factorial using math module
+import math
+
+num = int(input("Enter a number to find factorial: "))
+print(f" Factorial of {num} is {math.factorial(num)}")
+
+# output:
+# Enter a number to find factorial: 88
+#  Factorial of 88 is 185482642257398439114796845645546284380220968949399346684421580986889562184028199319100141244804501828416633516851200000000000000000000
+
+
+
+
+# Program 2: Greatest Common Divisor (GCD)
+# User enters two numbers, program calculates GCD
+import math
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print(f" GCD of {a} and {b} is {math.gcd(a, b)}")
+
+# output:
+# Enter first number: 5
+# Enter second number: 3
+#  GCD of 5 and 3 is 1
+
+
+
+
+
+# Program 3: Least Common Multiple (LCM)
+# User enters two numbers, program calculates LCM using gcd
+import math
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+lcm = abs(a * b) // math.gcd(a, b)
+print(f" LCM of {a} and {b} is {lcm}")
+
+# output:
+# Enter first number: 8
+# Enter second number: 9
+#  LCM of 8 and 9 is 72
+
+
+
+
+
+# Program 4: Square root of a number
+# User enters a number, program calculates square root
+import math
+
+num = float(input("Enter a number to find square root: "))
+print(f" Square root of {num} is {math.sqrt(num)}")
+
+# output:
+# Enter a number to find square root: 16
+#  Square root of 16.0 is 4.0
+
+
+
+
+# Program 5: Power calculation
+# User enters base and exponent, program calculates power
+import math
+
+base = float(input("Enter base number: "))
+exp = int(input("Enter exponent: "))
+print(f" {base} raised to the power {exp} is {math.pow(base, exp)}")
+
+# output:
+# Enter base number: 8
+# Enter exponent: 3
+#  8.0 raised to the power 3 is 512.0
+
+
