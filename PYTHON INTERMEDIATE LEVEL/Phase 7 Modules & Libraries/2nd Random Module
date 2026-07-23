@@ -1,0 +1,85 @@
+# Program 1: Dice roll simulator
+# User enters number of dice, program rolls them randomly
+import random
+
+n = int(input("Enter number of dice to roll: "))
+for i in range(n):
+    print(f" Dice {i+1}: {random.randint(1,6)}")
+
+# output:
+# Enter number of dice to roll: 4
+#  Dice 1: 2
+#  Dice 2: 1
+#  Dice 3: 3
+#  Dice 4: 3
+
+
+
+
+
+# Program 2: Random choice from a list
+# User enters items, program picks one randomly
+import random
+
+items = input("Enter items separated by space: ").split()
+choice = random.choice(items)
+print(f" Randomly selected item: {choice}")
+
+# output:
+# Enter items separated by space: apple mango banana orange
+#  Randomly selected item: apple
+
+
+
+
+
+# Program 3: Shuffle a list
+# User enters items, program shuffles them randomly
+import random
+
+items = input("Enter items separated by space: ").split()
+random.shuffle(items)
+print(" Shuffled list:", items)
+
+# output:
+# Enter items separated by space: apple mango banana orange grapes papaya pear
+#  Shuffled list: ['papaya', 'orange', 'banana', 'apple', 'grapes', 'pear', 'mango']
+
+
+
+
+
+
+# Program 4: Generate random number in a range
+# User enters start and end, program generates random number
+import random
+
+start = int(input("Enter start of range: "))
+end = int(input("Enter end of range: "))
+print(f" Random number between {start} and {end}: {random.randint(start, end)}")
+
+# output:
+# Enter start of range: 100
+# Enter end of range: 1000
+#  Random number between 100 and 1000: 421
+
+
+
+
+
+# Program 5: Lottery number generator
+# User enters how many numbers and range, program generates unique random numbers
+import random
+
+count = int(input("Enter how many lottery numbers: "))
+start = int(input("Enter start of range: "))
+end = int(input("Enter end of range: "))
+
+numbers = random.sample(range(start, end+1), count)
+print(" Your lottery numbers are:", numbers)
+
+# output:
+# Enter how many lottery numbers: 8
+# Enter start of range: 100
+# Enter end of range: 1000
+#  Your lottery numbers are: [694, 860, 448, 190, 468, 286, 531, 524]
