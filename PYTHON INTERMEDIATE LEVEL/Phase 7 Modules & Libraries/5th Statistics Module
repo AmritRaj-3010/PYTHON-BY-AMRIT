@@ -1,0 +1,70 @@
+# Program 1: Mean of numbers
+# User enters numbers, program calculates mean
+import statistics
+
+nums = list(map(float, input("Enter numbers separated by space: ").split()))
+print(f" Mean of numbers is {statistics.mean(nums)}")
+
+# output:
+# Enter numbers separated by space: 4 5 6 7 8
+#  Mean of numbers is 6.0
+
+
+
+
+# Program 2: Median of numbers
+# User enters numbers, program calculates median
+import statistics
+
+nums = list(map(float, input("Enter numbers separated by space: ").split()))
+print(f" Median of numbers is {statistics.median(nums)}")
+
+# output:
+# Enter numbers separated by space: 4 5 6 7 8 9
+#  Median of numbers is 6.5
+
+
+
+
+# Program 3: Mode of numbers
+# User enters numbers, program calculates mode
+import statistics
+
+nums = list(map(float, input("Enter numbers separated by space: ").split()))
+try:
+    print(f" Mode of numbers is {statistics.mode(nums)}")
+except statistics.StatisticsError:
+    print(" No unique mode found (all values equally frequent)")
+
+# output:
+# Enter numbers separated by space: 4 5 6 7 8 9
+#  Mode of numbers is 4.0
+
+
+
+
+# Program 4: Variance of numbers
+# User enters numbers, program calculates variance
+import statistics
+
+nums = list(map(float, input("Enter numbers separated by space: ").split()))
+print(f" Variance of numbers is {statistics.variance(nums)}")
+
+# output:
+# Enter numbers separated by space: 4 5 6 7 8 9 
+#  Variance of numbers is 3.5
+
+
+
+
+
+# Program 5: Standard deviation of numbers
+# User enters numbers, program calculates standard deviation
+import statistics
+
+nums = list(map(float, input("Enter numbers separated by space: ").split()))
+print(f" Standard deviation of numbers is {statistics.stdev(nums)}")
+
+# output:
+# Enter numbers separated by space: 4 5 6 7 8 9
+#  Standard deviation of numbers is 1.8708286933869707
