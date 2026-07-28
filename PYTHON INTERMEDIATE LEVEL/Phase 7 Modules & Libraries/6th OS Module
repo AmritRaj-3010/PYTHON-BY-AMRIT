@@ -1,0 +1,110 @@
+# Program 1: Get current working directory
+# Show the folder where program is running
+import os
+cwd = os.getcwd()
+print("Current Working Directory: ", cwd)
+
+# output:
+# Current Working Directory:  C:\Users\LENOVO\Desktop\PYTHON INTERMEDIATE LEVEL
+
+
+
+
+# Program 2: Change working directory
+# User enters a folder path, program changes to that directory
+import os
+
+folder = input("Enter folder path to change directory: ")
+
+try:
+    os.chdir(folder)
+    print(" Directory changed to:", os.getcwd())
+except FileNotFoundError:
+    print(" Folder not found!")
+
+
+# output:
+# Enter folder path to change directory: C:\Users\LENOVO\Desktop\PYTHON INTERMEDIATE LEVEL
+#  Directory changed to: C:\Users\LENOVO\Desktop\PYTHON INTERMEDIATE LEVEL
+#  Files and folders in current directory:
+# .snapshots
+# .vscode
+# abhay
+# abhaya
+# amrit
+# ananya_20260624_110334.bin
+# angad
+# bin
+# naman
+# PHASE 4 Data Structures
+# Phase 5 Advanced Function
+# Phase 6 File Handling & OS
+# Phase 7 Modules & Libraries
+
+
+
+
+
+# Program 3: List files in current directory
+# Lists all files and folders in the current working directory
+import os
+
+print(" Files and folders in current directory:")
+for item in os.listdir():
+    print(item)
+
+# output:
+#  Files and folders in current directory:
+# .snapshots
+# 1st Math Module
+# 2nd Random Module
+# 3rd Datetime Module
+# 4th Calendar Module
+# 5th Statistics Module
+# 6th OS Module
+
+
+
+
+
+# Program 4: Get environment variables
+# User enters variable name, program shows its value
+import os
+
+var = input("Enter environment variable name (e.g., PATH, USERNAME): ")
+
+value = os.environ.get(var)
+if value:
+    print(f" Value of {var} is:\n{value}")
+else:
+    print(f" Environment variable '{var}' not found!")
+
+# output:
+# Enter environment variable name (e.g., PATH, USERNAME): PATH
+#  Value of PATH is:
+# c:\Users\LENOVO\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\LENOVO\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windoram Files\Git\cmd;C:\Users\LENOVO\AppData\Local\Programs\Python\Python314\Scripts\;C:\Users\LENOVO\AppData\Local\Programs\Python\Python314\;C:\Users\LENOVO\AppData\Local\Programs\Python\Launcher\;C:\Users\LENOVO\AppData\Local\Microsoft\WindowsApps;C:\Users\LENOVO\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\LENOVO\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\LENOVO\.dotneton.debugpy-2026.6.0-win32-x64\bundled\scripts\noConfigScripts
+
+# Enter environment variable name (e.g., PATH, USERNAME): USERNAME
+#  Value of USERNAME is:
+# LENOVO
+
+
+
+# Program 5: Path operations
+# User enters a file path, program splits into folder and file name
+import os
+
+path = input("Enter a file path: ")
+
+folder, filename = os.path.split(path)
+print(" Folder:", folder)
+print(" File:", filename)
+
+# output:
+# Enter a file path: C:\Users\LENOVO\Desktop\AWANI
+#  Folder: C:\Users\LENOVO\Desktop
+#  File: AWANI
+
+
+
+
