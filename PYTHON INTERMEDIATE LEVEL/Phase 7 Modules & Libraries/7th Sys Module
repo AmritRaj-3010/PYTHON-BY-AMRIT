@@ -1,0 +1,72 @@
+# Program 1: Show Python version
+# Displays the current Python version being used
+import sys
+
+from click import Argument
+
+print(" Current Python version:", sys.version)
+
+#output:
+# Current Python version: 3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]
+
+
+
+
+
+# Program 2: Command-line arguments
+# User runs program with arguments, program prints them
+import sys
+
+print(" Command-line arguments:")
+for i, arg in enumerate(sys.argv):
+    print(f"Argument {i}: {arg}")
+
+# #output:
+#  Command-line arguments:
+# Argument 0: C:\Users\LENOVO\Desktop\PYTHON INTERMEDIATE LEVEL\Phase 7 Modules & Libraries\7th Sys Module
+
+
+
+
+
+# Program 3: Exit program safely
+# User enters a number, program exits if number is negative
+import sys
+
+num = int(input("Enter a number: "))
+if num < 0:
+    print(" Negative number entered, exiting program...")
+    sys.exit()
+else:
+    print(" Positive number entered, program continues.")
+
+#output:
+# Enter a number: 54
+#  Positive number entered, program continues.
+
+
+
+
+
+# Program 4: Get system platform
+# Displays the operating system/platform details
+import sys
+
+print(" System platform:", sys.platform)
+
+# output:
+# System platform: win32
+
+
+
+
+
+# Program 5: Show maximum integer size
+# Displays the maximum integer size supported by Python
+import sys
+
+print(" Maximum integer size supported:", sys.maxsize)
+
+#output:
+#  Maximum integer size supported: 9223372036854775807
+
