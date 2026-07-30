@@ -1,0 +1,134 @@
+# Program 1: Counter example
+# User enters words, program counts frequency of each word
+from collections import Counter
+
+words = input("Enter words separated by space: ").split()
+count = Counter(words)
+print(" Word frequency:", count)
+
+#output;
+# Enter words separated by space: amrit ananya ansh awani aditya aditi
+#  Word frequency: Counter({'amrit': 1, 'ananya': 1, 'ansh': 1, 'awani': 1, 'aditya': 1, 'aditi': 1})
+
+
+
+
+# Program 2: defaultdict example
+# User enters student names and marks, program stores them in defaultdict
+from collections import defaultdict
+
+marks = defaultdict(list)
+
+n = int(input("Enter number of students: "))
+for i in range(n):
+    name = input("Enter student name: ")
+    score = int(input("Enter score: "))
+    marks[name].append(score)
+
+print(" Student marks dictionary:", dict(marks))
+
+#output;
+# Enter number of students: 4
+# Enter student name: aman
+# Enter score: 58
+# Enter student name: aadesh
+# Enter score: 65
+# Enter student name: achal
+# Enter score: 78
+# Enter student name: anand
+# Enter score: 70
+#  Student marks dictionary: {'aman': [58], 'aadesh': [65], 'achal': [78], 'anand': [70]}
+
+
+
+
+
+# Program 3: namedtuple example
+# User enters employee details, program stores them in namedtuple
+from collections import namedtuple
+
+Employee = namedtuple("Employee", ["id", "name", "salary"])
+
+emp_id = input("Enter employee ID: ")
+emp_name = input("Enter employee name: ")
+emp_salary = float(input("Enter employee salary: "))
+
+emp = Employee(emp_id, emp_name, emp_salary)
+print(" Employee details:", emp)
+
+#output;
+# Enter employee ID: 24665100
+# Enter employee name: abhay
+# Enter employee salary: 50000
+#  Employee details: Employee(id='24665100', name='abhay', salary=50000.0)
+
+
+
+
+
+
+# Program 4: deque example
+# User enters tasks, program manages them using deque
+from collections import deque
+
+tasks = deque()
+
+print("Enter tasks (type 'STOP' to finish):")
+while True:
+    task = input()
+    if task.strip().lower() == "stop":
+        break
+    tasks.append(task)
+
+print(" Tasks in queue:", list(tasks))
+
+# Remove first and last task
+if tasks:
+    print(" Removing first task:", tasks.popleft())
+if tasks:
+    print(" Removing last task:", tasks.pop())
+
+#output;
+# Enter tasks (type 'STOP' to finish):
+# to sell 500 pens in a day
+# not use mole phone or any other electronic devices
+# take help from your coligues but not presurise
+# STOP
+#  Tasks in queue: ['to sell 500 pens in a day', 'not use mole phone or any other electronic devices', 'take help from your coligues but not presurise']
+#  Removing first task: to sell 500 pens in a day
+#  Removing last task: take help from your coligues but not presurise
+
+
+
+
+
+
+
+
+# Program 5: OrderedDict example
+# User enters key-value pairs, program stores them in OrderedDict
+from collections import OrderedDict
+
+od = OrderedDict()
+n = int(input("Enter number of items: "))
+
+for i in range(n):
+    key = input("Enter key: ")
+    value = input("Enter value: ")
+    od[key] = value
+
+print(" Ordered dictionary:", od)
+
+#output;
+# Enter number of items: 4
+# Enter key: 4
+# Enter value: 5
+# Enter key: 6
+# Enter value: 7
+# Enter key: 8
+# Enter value: 9
+# Enter key: 1
+# Enter value: 2
+#  Ordered dictionary: OrderedDict({'4': '5', '6': '7', '8': '9', '1': '2'})
+
+
