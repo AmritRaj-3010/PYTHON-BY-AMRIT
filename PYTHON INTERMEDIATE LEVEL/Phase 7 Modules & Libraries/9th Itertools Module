@@ -1,0 +1,163 @@
+# Program 1: Generate permutations
+# User enters items, program generates all possible permutations
+import itertools
+
+items = input("Enter items separated by space: ").split()
+print(" Permutations:")
+for p in itertools.permutations(items):
+    print(p)
+
+#output;
+# Enter items separated by space: red pink yellow
+#  Permutations:
+# ('red', 'pink', 'yellow')
+# ('red', 'yellow', 'pink')
+# ('pink', 'red', 'yellow')
+# ('pink', 'yellow', 'red')
+# ('yellow', 'red', 'pink')
+# ('yellow', 'pink', 'red')
+
+
+
+
+# Program 2: Generate combinations
+# User enters items and size, program generates all possible combinations
+import itertools
+
+items = input("Enter items separated by space: ").split()
+r = int(input("Enter combination size: "))
+print(f" Combinations of size {r}:")
+for c in itertools.combinations(items, r):
+    print(c)
+
+#output;
+# Enter items separated by space: apple mango banana papaya pear lichi
+# Enter combination size: 2
+#  Combinations of size 2:
+# ('apple', 'mango')
+# ('apple', 'banana')
+# ('apple', 'papaya')
+# ('apple', 'pear')
+# ('apple', 'lichi')
+# ('mango', 'banana')
+# ('mango', 'papaya')
+# ('mango', 'pear')
+# ('mango', 'lichi')
+# ('banana', 'papaya')
+# ('banana', 'pear')
+# ('banana', 'lichi')
+# ('papaya', 'pear')
+# ('papaya', 'lichi')
+# ('pear', 'lichi')
+
+
+
+
+
+
+
+# Program 3: Cartesian product
+# User enters two sets of items, program generates product
+import itertools
+
+set1 = input("Enter first set items separated by space: ").split()
+set2 = input("Enter second set items separated by space: ").split()
+
+print(" Cartesian product:")
+for prod in itertools.product(set1, set2):
+    print(prod)
+
+#output;
+# Enter first set items separated by space: mango banana 
+# papaya pear lichi guava grapes
+# Enter second set items separated by space: potato onion chilli guard radish carrot
+#  Cartesian product:
+# ('mango', 'potato')
+# ('mango', 'onion')
+# ('mango', 'chilli')
+# ('mango', 'guard')
+# ('mango', 'radish')
+# ('mango', 'carrot')
+# ('banana', 'potato')
+# ('banana', 'onion')
+# ('banana', 'chilli')
+# ('banana', 'guard')
+# ('banana', 'radish')
+# ('banana', 'carrot')
+# ('papaya', 'potato')
+# ('papaya', 'onion')
+# ('papaya', 'chilli')
+# ('papaya', 'guard')
+# ('papaya', 'radish')
+# ('papaya', 'carrot')
+# ('pear', 'potato')
+# ('pear', 'onion')
+# ('pear', 'chilli')
+# ('pear', 'guard')
+# ('pear', 'radish')
+# ('pear', 'carrot')
+# ('lichi', 'potato')
+# ('lichi', 'onion')
+# ('lichi', 'chilli')
+# ('lichi', 'guard')
+# ('lichi', 'radish')
+# ('lichi', 'carrot')
+# ('guava', 'potato')
+# ('guava', 'onion')
+# ('guava', 'chilli')
+# ('guava', 'guard')
+# ('guava', 'radish')
+# ('guava', 'carrot')
+# ('grapes', 'potato')
+# ('grapes', 'onion')
+# ('grapes', 'chilli')
+# ('grapes', 'guard')
+# ('grapes', 'radish')
+# ('grapes', 'carrot')
+
+
+
+
+
+# Program 4: Infinite cycle
+# User enters items, program cycles through them a fixed number of times
+import itertools
+
+items = input("Enter items separated by space: ").split()
+n = int(input("Enter how many values to display: "))
+
+print(" Cycling through items:")
+for i, val in zip(range(n), itertools.cycle(items)):
+    print(val)
+
+#output;
+# Enter items separated by space: red orange blue pink yellow green
+# Enter how many values to display: 4
+#  Cycling through items:
+# red
+# orange
+# blue
+# pink
+
+
+
+
+# Program 5: Accumulate sums
+# User enters numbers, program shows cumulative sums
+import itertools
+
+nums = list(map(int, input("Enter numbers separated by space: ").split()))
+print(" Cumulative sums:")
+for total in itertools.accumulate(nums):
+    print(total)
+
+#output;
+# Enter numbers separated by space: 56 65 78 70
+#  Cumulative sums:
+# 56
+# 121
+# 199
+# 269
+
+
+
