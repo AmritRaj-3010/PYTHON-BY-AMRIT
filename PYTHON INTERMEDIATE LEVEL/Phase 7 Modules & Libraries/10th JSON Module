@@ -1,0 +1,133 @@
+# Program 1: Convert Python dictionary to JSON string
+# User enters key-value pairs, program converts to JSON
+import json
+
+from sqlalchemy import JSON
+
+data = {}
+n = int(input("Enter number of items: "))
+for i in range(n):
+    key = input("Enter key: ")
+    value = input("Enter value: ")
+    data[key] = value
+
+json_str = json.dumps(data, indent=4)
+print(" JSON string:\n", json_str)
+
+#output;
+# Enter number of items: 4
+# Enter key: 56
+# Enter value: 100
+# Enter key: 65
+# Enter value: 100
+# Enter key: 78
+# Enter value: 100
+# Enter key: 70
+# Enter value: 100
+#  JSON string:
+#  {
+#     "56": "100",
+#     "65": "100",
+#     "78": "100",
+#     "70": "100"
+# }
+
+
+
+# Program 2: Convert JSON string to Python dictionary
+# User enters JSON string, program converts back to dictionary
+import json
+
+json_str = input("Enter JSON string: ")
+try:
+    data = json.loads(json_str)
+    print(" Converted to Python dictionary:", data)
+except json.JSONDecodeError:
+    print(" Invalid JSON format!")
+
+#output;
+# Enter JSON string: {"name": "Amrit", "course": "Python"}
+#  Converted to Python dictionary: {'name': 'Amrit', 'course': 'Python'}
+
+
+
+
+# Program 3: Save dictionary to JSON file
+# User enters data, program saves it into a JSON file
+import json
+
+data = {}
+n = int(input("Enter number of items: "))
+for i in range(n):
+    key = input("Enter key: ")
+    value = input("Enter value: ")
+    data[key] = value
+
+filename = input("Enter file name (e.g., data.json): ")
+with open(filename, "w") as f:
+    json.dump(data, f, indent=4)
+
+print(f" Data saved to {filename}")
+
+#output;
+# Enter number of items: 4
+# Enter key: 354
+# Enter value: 456
+# Enter key: 234
+# Enter value: 345
+# Enter key: 678
+# Enter value: 876
+# Enter key: 567
+# Enter value: 876
+# Enter file name (e.g., data.json): faltudata.json
+#  Data saved to faltudata.json
+
+
+
+
+
+# Program 4: Read JSON file
+# User enters file name, program reads and prints data
+import json
+
+filename = input("Enter JSON file name: ")
+try:
+    with open(filename, "r") as f:
+        data = json.load(f)
+    print(" Data from file:", data)
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+# Enter JSON file name: faltudata.json
+#  Data from file: {'354': '456', '234': '345', '678': '876', '567': '876'}
+
+
+
+
+# Program 5: Update JSON file
+# User enters file name and new key-value, program updates JSON file
+import json
+
+filename = input("Enter JSON file name: ")
+try:
+    with open(filename, "r") as f:
+        data = json.load(f)
+
+    key = input("Enter key to add/update: ")
+    value = input("Enter value: ")
+    data[key] = value
+
+    with open(filename, "w") as f:
+        json.dump(data, f, indent=4)
+
+    print(f" File '{filename}' updated successfully!")
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+# Enter JSON file name: faltudata.json
+# Enter key to add/update: 2344
+# Enter value: 5433
+#  File 'faltudata.json' updated successfully!
+
