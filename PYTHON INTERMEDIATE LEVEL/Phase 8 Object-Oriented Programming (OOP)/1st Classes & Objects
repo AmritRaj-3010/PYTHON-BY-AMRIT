@@ -1,0 +1,154 @@
+# Program 1: Simple class and object
+# Defines a Student class and creates an object
+class Student:
+    def __init__(self, name, roll):
+        self.name = name
+        self.roll = roll
+
+    def display(self):
+        print(f" Name: {self.name}, Roll No: {self.roll}")
+
+# User input
+name = input("Enter student name: ")
+roll = input("Enter roll number: ")
+
+s1 = Student(name, roll)
+s1.display()
+
+#output;
+# Enter student name: amrit
+# Enter roll number: 103
+#  Name: amrit, Roll No: 103
+
+
+
+
+
+# Program 2: Class with multiple methods
+# Defines a Rectangle class with area and perimeter methods
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+# User input
+l = float(input("Enter length: "))
+w =float(input("Enter width: "))
+
+rect = Rectangle(l, w)
+print(" Area:", rect.area())
+print(" Perimeter:", rect.perimeter())
+
+#output;
+# Enter length: 4
+# Enter width: 4
+#  Area: 16.0
+#  Perimeter: 16.0
+
+
+
+
+
+# Program 3: Class with default values
+# Defines a Car class with default attributes
+class Car:
+    def __init__(self, brand="Unknown", model="Unknown"):
+        self.brand = brand
+        self.model = model
+
+    def show(self):
+        print(f"🚗 Car: {self.brand} {self.model}")
+
+# User input
+brand = input("Enter car brand: ")
+model = input("Enter car model: ")
+
+c1 = Car(brand, model)
+c1.show()
+
+#output;
+# Enter car brand: tesla
+# Enter car model: g16
+# 🚗 Car: tesla g16
+
+
+
+
+
+
+# Program 4: Class with user-defined method
+# Defines a BankAccount class with deposit and withdraw methods
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f" Deposited {amount}, New Balance: {self.balance}")
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print(f" Withdrawn {amount}, New Balance: {self.balance}")
+        else:
+            print(" Insufficient balance!")
+
+# User input
+owner = input("Enter account owner name: ")
+acc = BankAccount(owner)
+
+acc.deposit(int(input("Enter deposit amount: ")))
+acc.withdraw(int(input("Enter withdraw amount: ")))
+
+#output;
+# Enter account owner name: amrit
+# Enter deposit amount: 2000
+#  Deposited 2000, New Balance: 2000
+# Enter withdraw amount: 1500
+#  Withdrawn 1500, New Balance: 500
+
+
+
+
+
+# Program 5: Multiple objects of a class
+# Defines a Book class and creates multiple objects
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def info(self):
+        print(f" '{self.title}' by {self.author}")
+
+# User input
+n = int(input("Enter number of books: "))
+books = []
+for i in range(n):
+    title = input(f"Enter title of book {i+1}: ")
+    author = input(f"Enter author of book {i+1}: ")
+    books.append(Book(title, author))
+
+print(" Book details:")
+for b in books:
+    b.info()
+
+#output;
+# Enter number of books: 2
+# Enter title of book 1: math2
+# Enter author of book 1: math4
+# Enter title of book 2: math6
+# Enter author of book 2: math8
+#  Book details:
+#  'math2' by math4
+#  'math6' by math8
+
+
+
