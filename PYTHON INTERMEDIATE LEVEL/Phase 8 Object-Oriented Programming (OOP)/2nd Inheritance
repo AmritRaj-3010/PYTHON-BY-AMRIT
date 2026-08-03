@@ -1,0 +1,141 @@
+# Program 1: Single Inheritance
+# Base class: Person, Derived class: Student
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def show(self):
+        print(f"👤 Name: {self.name}")
+
+class Student(Person):
+    def __init__(self, name, roll):
+        super().__init__(name)
+        self.roll = roll
+
+    def display(self):
+        print(f" Student: {self.name}, Roll No: {self.roll}")
+
+# User input
+name = input("Enter student name: ")
+roll = input("Enter roll number: ")
+s = Student(name, roll)
+s.display()
+
+# #output;
+# Enter student name: amrit
+# Enter roll number: 103
+#  Student: amrit, Roll No: 103
+
+
+
+# Program 2: Multiple Inheritance
+# Base classes: Father, Mother; Derived class: Child
+class Father:
+    def skills(self):
+        print(" Father skills: Driving")
+
+class Mother:
+    def skills(self):
+        print(" Mother skills: Cooking")
+
+class Child(Father, Mother):
+    def skills(self):
+        Father.skills(self)
+        Mother.skills(self)
+        print(" Child skills: Gaming")
+
+c = Child()
+c.skills()
+
+#output;
+#  Father skills: Driving
+#  Mother skills: Cooking
+#  Child skills: Gaming
+
+
+
+# Program 3: Multilevel Inheritance
+# Grandparent → Parent → Child
+class Grandparent:
+    def show(self):
+        print(" Grandparent: Wisdom")
+
+class Parent(Grandparent):
+    def show(self):
+        super().show()
+        print(" Parent: Guidance")
+
+class Child(Parent):
+    def show(self):
+        super().show()
+        print(" Child: Learning")
+
+c = Child()
+c.show()
+
+#output;
+#  Grandparent: Wisdom
+#  Parent: Guidance
+#  Child: Learning
+
+
+
+# Program 4: Hierarchical Inheritance
+# One base class, multiple derived classes
+class Animal:
+    def sound(self):
+        print(" Animals make sounds")
+
+class Dog(Animal):
+    def sound(self):
+        print(" Dog barks")
+
+class Cat(Animal):
+    def sound(self):
+        print(" Cat meows")
+
+# User input
+choice = input("Enter animal (dog/cat): ").lower()
+if choice == "dog":
+    d = Dog()
+    d.sound()
+elif choice == "cat":
+    c = Cat()
+    c.sound()
+else:
+    print(" Unknown animal")
+
+#output;
+# Enter animal (dog/cat): dog
+#  Dog barks
+
+
+
+
+# Program 5: Hybrid Inheritance
+# Combination of multiple and hierarchical inheritance
+class School:
+    def info(self):
+        print(" School provides education")
+
+class Teacher(School):
+    def role(self):
+        print(" Teacher teaches students")
+
+class Student(School):
+    def role(self):
+        print(" Student learns subjects")
+
+class Monitor(Teacher, Student):
+    def duty(self):
+        print(" Monitor helps both teacher and students")
+
+m = Monitor()
+m.info()
+m.role()
+m.duty()
+
+#output;
+#  School provides education
+#  Teacher teaches students
+#  Monitor helps both teacher and students
