@@ -1,0 +1,142 @@
+# Program 1: Method Overriding
+# Base class Animal, derived classes override sound() method
+class Animal:
+    def sound(self):
+        print(" Animal makes a sound")
+
+class Dog(Animal):
+    def sound(self):
+        print(" Dog barks")
+
+class Cat(Animal):
+    def sound(self):
+        print(" Cat meows")
+
+choice = input("Enter animal (dog/cat): ").lower()
+if choice == "dog":
+    obj = Dog()
+elif choice == "cat":
+    obj = Cat()
+else:
+    obj = Animal()
+obj.sound()
+
+#output;
+# Enter animal (dog/cat): dog
+#  Dog barks
+
+
+
+
+# Program 2: Operator Overloading
+# '+' operator behaves differently for custom class
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    def show(self):
+        print(f" Vector: ({self.x}, {self.y})")
+
+# User input
+x1, y1 = map(int, input("Enter first vector (x y): ").split())
+x2, y2 = map(int, input("Enter second vector (x y): ").split())
+
+v1 = Vector(x1, y1)
+v2 = Vector(x2, y2)
+v3 = v1 + v2
+v3.show()
+
+#output;
+# Enter first vector (x y): 5 6
+# Enter second vector (x y): 7 8
+#  Vector: (12, 14)
+
+
+
+
+# Program 3: Polymorphism with functions
+# Same function name works for different objects
+class Bird:
+    def fly(self):
+        print(" Bird can fly")
+
+class Penguin:
+    def fly(self):
+        print(" Penguin cannot fly")
+
+def show_flying(obj):
+    obj.fly()
+
+choice = input("Enter bird type (bird/penguin): ").lower()
+if choice == "bird":
+    show_flying(Bird())
+else:
+    show_flying(Penguin())
+
+#output;
+# Enter bird type (bird/penguin): bird
+#  Bird can fly
+
+
+
+
+# Program 4: Built-in Polymorphism
+# len() works differently for string, list, tuple
+s = input("Enter a string: ")
+lst = input("Enter list items separated by space: ").split()
+tpl = tuple(lst)
+
+print(" Length of string:", len(s))
+print(" Length of list:", len(lst))
+print(" Length of tuple:", len(tpl))
+
+#output;
+# Enter a string: i am amrit raj and i am a btech cse student
+# Enter list items separated by space: apple mango papaya pear banana
+#  Length of string: 43
+#  Length of list: 5
+#  Length of tuple: 5
+
+
+
+# Program 5: Abstract Base Class (ABC)
+# Enforces polymorphism by requiring subclasses to implement methods
+from abc import ABC, abstractmethod
+from turtle import shape
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+    def area(self):
+        return self.side * self.side
+
+choice = input("Enter shape (circle/square): ").lower()
+if choice == "circle":
+    r = float(input("Enter radius: "))
+    obj = Circle(r)
+else:
+    s = float(input("Enter side: "))
+    obj = Square(s)
+
+print(" Area:", obj.area())
+
+#output;
+# Enter shape (circle/square): circle
+# Enter radius: 5
+#  Area: 78.5
+
