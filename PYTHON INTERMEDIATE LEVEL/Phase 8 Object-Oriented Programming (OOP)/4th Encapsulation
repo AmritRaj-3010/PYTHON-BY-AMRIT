@@ -1,0 +1,157 @@
+# Program 1: Private variable with getter
+# Demonstrates how private variables are accessed using methods
+class Student:
+    def __init__(self, name, roll):
+        self.__name = name   # private variable
+        self.__roll = roll   # private variable
+
+    def get_info(self):
+        return f" Name: {self.__name}, Roll: {self.__roll}"
+
+# User input
+name = input("Enter student name: ")
+roll = input("Enter roll number: ")
+s = Student(name, roll)
+print(s.get_info())
+
+#output;
+# Enter student name: amrit
+# Enter roll number: 103
+#  Name: amrit, Roll: 103
+
+
+
+
+# Program 2: Getter and Setter methods
+# Allows controlled access to private variables
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.__owner = owner
+        self.__balance = balance
+
+    def get_balance(self):
+        return self.__balance
+
+    def set_balance(self, amount):
+        if amount >= 0:
+            self.__balance = amount
+        else:
+            print(" Balance cannot be negative!")
+
+# User input
+owner = input("Enter account owner: ")
+acc = BankAccount(owner)
+print("Initial Balance:", acc.get_balance())
+new_balance = int(input("Enter new balance: "))
+acc.set_balance(new_balance)
+print("Updated Balance:", acc.get_balance())
+
+#output;
+# Enter account owner: abhay
+# Initial Balance: 0
+# Enter new balance: 5000
+# Updated Balance: 5000
+
+
+
+
+# Program 3: Encapsulation with deposit/withdraw
+# Protects balance using private variable
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.__owner = owner
+        self.__balance = balance
+
+    def deposit(self, amount):
+        self.__balance += amount
+        print(f" Deposited {amount}, New Balance: {self.__balance}")
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+            print(f" Withdrawn {amount}, New Balance: {self.__balance}")
+        else:
+            print(" Insufficient balance!")
+
+# User input
+owner = input("Enter account owner: ")
+acc = BankAccount(owner)
+acc.deposit(int(input("Enter deposit amount: ")))
+acc.withdraw(int(input("Enter withdraw amount: ")))
+
+#output;
+# Enter account owner: ansh
+# Enter deposit amount: 600
+#  Deposited 600, New Balance: 600
+# Enter withdraw amount: 100
+#  Withdrawn 100, New Balance: 500
+
+
+
+
+# Program 4: Encapsulation with property decorator
+# Uses @property for cleaner getter/setter
+class Employee:
+    def __init__(self, name, salary):
+        self.__name = name
+        self.__salary = salary
+
+    @property
+    def salary(self):
+        return self.__salary
+
+    @salary.setter
+    def salary(self, value):
+        if value > 0:
+            self.__salary = value
+        else:
+            print(" Salary must be positive!")
+
+# User input
+name = input("Enter employee name: ")
+salary = int(input("Enter salary: "))
+emp = Employee(name, salary)
+print("Initial Salary:", emp.salary)
+new_salary = int(input("Enter new salary: "))
+emp.salary = new_salary
+print("Updated Salary:", emp.salary)
+
+#output;
+# Enter employee name: amrit
+# Enter salary: 40000
+# Initial Salary: 40000
+# Enter new salary: 50000
+# Updated Salary: 50000
+
+
+
+
+# Program 5: Encapsulation in a Library System
+# Demonstrates private data with controlled access
+class Library:
+    def __init__(self):
+        self.__books = []
+
+    def add_book(self, title):
+        self.__books.append(title)
+        print(f" Book '{title}' added")
+
+    def show_books(self):
+        print(" Books in library:", self.__books)
+
+# User input
+lib = Library()
+n = int(input("Enter number of books to add: "))
+for i in range(n):
+    title = input(f"Enter book {i+1} title: ")
+    lib.add_book(title)
+
+lib.show_books()
+
+#output;
+# Enter number of books to add: 2
+# Enter book 1 title: math1
+#  Book 'math1' added
+# Enter book 2 title: math2
+#  Book 'math2' added
+#  Books in library: ['math1', 'math2']
