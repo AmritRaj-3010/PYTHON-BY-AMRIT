@@ -1,0 +1,145 @@
+# Program 1: Abstract Base Class (Shape)
+# Defines abstract method area(), subclasses must implement it
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+r = float(input("Enter radius of circle: "))
+c = Circle(r)
+print(" Area of circle:", c.area())
+
+#output;
+# Enter radius of circle: 5
+#  Area of circle: 78.5
+
+
+
+# Program 2: Abstract class with multiple methods
+# Vehicle class forces subclasses to implement start() and stop()
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+    @abstractmethod
+    def stop(self):
+        pass
+
+class Car(Vehicle):
+    def start(self):
+        print(" Car started")
+    def stop(self):
+        print(" Car stopped")
+
+v = Car()
+v.start()
+v.stop()
+
+#output;
+#  Car started
+#  Car stopped
+
+
+
+
+# Program 3: Abstract class for Payment System
+# Forces subclasses to implement pay() method
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+class CreditCard(Payment):
+    def pay(self, amount):
+        print(f" Paid {amount} using Credit Card")
+
+class UPI(Payment):
+    def pay(self, amount):
+        print(f" Paid {amount} using UPI")
+
+choice = input("Enter payment method (card/upi): ").lower()
+amount = float(input("Enter amount: "))
+if choice == "card":
+    obj = CreditCard()
+else:
+    obj = UPI()
+obj.pay(amount)
+
+#output;
+# Enter payment method (card/upi): upi
+# Enter amount: 5000
+#  Paid 5000.0 using UPI
+
+
+
+
+# Program 4: Abstract class for Employee roles
+# Different roles implement work() differently
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+    @abstractmethod
+    def work(self):
+        pass
+
+class Developer(Employee):
+    def work(self):
+        print(" Developer writes code")
+
+class Manager(Employee):
+    def work(self):
+        print(" Manager manages team")
+
+role = input("Enter role (developer/manager): ").lower()
+if role == "developer":
+    emp = Developer()
+else:
+    emp = Manager()
+emp.work()
+
+#output;
+# Enter role (developer/manager): developer
+#  Developer writes code
+
+
+
+
+# Program 5: Abstract class for Animal sounds
+# Forces subclasses to implement sound()
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        print(" Dog barks")
+
+class Cat(Animal):
+    def sound(self):
+        print(" Cat meows")
+
+choice = input("Enter animal (dog/cat): ").lower()
+if choice == "dog":
+    a = Dog()
+else:
+    a = Cat()
+a.sound()
+
+#output;
+# Enter animal (dog/cat): cat
+#  Cat meows
