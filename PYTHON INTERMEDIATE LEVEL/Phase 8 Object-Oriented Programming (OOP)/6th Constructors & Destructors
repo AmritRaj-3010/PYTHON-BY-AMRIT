@@ -1,0 +1,129 @@
+# Program 1: Simple Constructor
+# __init__ is called automatically when object is created
+class Student:
+    def __init__(self, name, roll):
+        self.name = name
+        self.roll = roll
+        print(" Constructor called, object created")
+
+    def show(self):
+        print(f" Name: {self.name}, Roll: {self.roll}")
+
+name = input("Enter student name: ")
+roll = input("Enter roll number: ")
+s = Student(name, roll)
+s.show()
+
+#output;
+# Enter student name: amrit
+# Enter roll number: 103
+#  Constructor called, object created
+#  Name: amrit, Roll: 103
+
+
+
+
+
+# Program 2: Constructor with default values
+class Car:
+    def __init__(self, brand="Unknown", model="Unknown"):
+        self.brand = brand
+        self.model = model
+        print(" Car object created")
+
+    def info(self):
+        print(f"Car: {self.brand} {self.model}")
+
+brand = input("Enter car brand: ")
+model = input("Enter car model: ")
+c = Car(brand, model)
+c.info()
+
+#output;
+# Enter car brand: testa
+# Enter car model: g15
+#  Car object created
+# Car: testa g15
+
+
+
+
+# Program 3: Destructor demonstration
+# __del__ is called when object is deleted
+class Demo:
+    def __init__(self):
+        print(" Constructor: Object created")
+    def __del__(self):
+        print(" Destructor: Object destroyed")
+
+d = Demo()
+print("Working with object...")
+del d   # explicitly deleting object
+print("End of program")
+
+#output;
+#  Constructor: Object created
+# Working with object...
+#  Destructor: Object destroyed
+# End of program
+
+
+
+
+# Program 4: BankAccount with constructor and destructor
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
+        print(f" Account created for {self.owner}")
+
+    def __del__(self):
+        print(f" Account of {self.owner} closed")
+
+    def show_balance(self):
+        print(f" Balance: {self.balance}")
+
+owner = input("Enter account owner: ")
+acc = BankAccount(owner, int(input("Enter initial balance: ")))
+acc.show_balance()
+del acc
+
+#output;
+# Enter account owner: amrit
+# Enter initial balance: 5000
+#  Account created for amrit
+#  Balance: 5000
+#  Account of amrit closed
+
+
+
+
+
+# Program 5: File handling with constructor & destructor
+# Constructor opens file, destructor closes it
+class FileHandler:
+    def __init__(self, filename):
+        self.file = open(filename, "w")
+        print(f" File '{filename}' opened")
+
+    def write(self, text):
+        self.file.write(text + "\n")
+        print(" Text written to file")
+
+    def __del__(self):
+        self.file.close()
+        print(" File closed")
+
+filename = input("Enter file name (e.g., demo.txt): ")
+fh = FileHandler(filename)
+text = input("Enter text to write: ")
+fh.write(text)
+del fh
+
+#output;
+# Enter file name (e.g., demo.txt): demo.txt
+#  File 'demo.txt' opened
+# Enter text to write: amrit raj is a btech student
+#  Text written to file
+#  File closed
+
