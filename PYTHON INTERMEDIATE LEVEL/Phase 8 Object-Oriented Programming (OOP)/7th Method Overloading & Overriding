@@ -1,0 +1,117 @@
+# Program 1: Method Overriding
+# Base class defines method, derived class overrides it
+class Animal:
+    def sound(self):
+        print(" Animal makes a sound")
+
+class Dog(Animal):
+    def sound(self):
+        print(" Dog barks")
+
+class Cat(Animal):
+    def sound(self):
+        print(" Cat meows")
+
+choice = input("Enter animal (dog/cat): ").lower()
+if choice == "dog":
+    obj = Dog()
+elif choice == "cat":
+    obj = Cat()
+else:
+    obj = Animal()
+obj.sound()
+
+#output;
+# Enter animal (dog/cat): cat
+#  Cat meows
+
+
+
+
+# Program 2: Method Overloading using default arguments
+# Python does not support true overloading, but we can simulate it
+class Calculator:
+    def add(self, a=0, b=0, c=0):
+        return a + b + c
+
+calc = Calculator()
+print(" Sum of 2 numbers:", calc.add(5, 10))
+print(" Sum of 3 numbers:", calc.add(5, 10, 15))
+
+#output;
+#  Sum of 2 numbers: 15
+#  Sum of 3 numbers: 30
+
+
+
+
+# Program 3: Operator Overloading
+# '+' operator behaves differently for custom class
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    def show(self):
+        print(f" Vector: ({self.x}, {self.y})")
+
+x1, y1 = map(int, input("Enter first vector (x y): ").split())
+x2, y2 = map(int, input("Enter second vector (x y): ").split())
+
+v1 = Vector(x1, y1)
+v2 = Vector(x2, y2)
+v3 = v1 + v2
+v3.show()
+
+#output;
+# Enter first vector (x y): 2 3
+# Enter second vector (x y): 8 7
+#  Vector: (10, 10)
+
+
+
+
+
+# Program 4: Method Overriding with super()
+# Child class overrides method but also calls parent method
+class Parent:
+    def greet(self):
+        print(" Parent says hello")
+
+class Child(Parent):
+    def greet(self):
+        super().greet()
+        print(" Child says hi")
+
+c = Child()
+c.greet()
+
+#output;
+#  Parent says hello
+#  Child says hi
+
+
+
+
+
+# Program 5: Method Overloading using variable arguments (*args)
+class MathOps:
+    def multiply(self, *args):
+        result = 1
+        for num in args:
+            result *= num
+        return result
+
+m = MathOps()
+print(" Multiply 2 numbers:", m.multiply(2, 3))
+print(" Multiply 3 numbers:", m.multiply(2, 3, 4))
+print(" Multiply 4 numbers:", m.multiply(2, 3, 4, 5))
+
+#output;
+#  Multiply 2 numbers: 6
+#  Multiply 3 numbers: 24
+#  Multiply 4 numbers: 120
+
