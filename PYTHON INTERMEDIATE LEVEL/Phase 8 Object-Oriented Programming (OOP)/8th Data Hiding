@@ -1,0 +1,130 @@
+# Program 1: Private variable
+# Demonstrates how private variables cannot be accessed directly
+class Student:
+    def __init__(self, name, roll):
+        self.__name = name   # private
+        self.__roll = roll   # private
+
+    def show(self):
+        print(f" Name: {self.__name}, Roll: {self.__roll}")
+
+name = input("Enter student name: ")
+roll = input("Enter roll number: ")
+s = Student(name, roll)
+s.show()
+
+# Trying to access directly will fail: s.__name
+
+#output;
+# Enter student name: amrit
+# Enter roll number: 11
+#  Name: amrit, Roll: 11
+
+
+
+
+# Program 2: Protected variable
+# Protected variables can be accessed but should not be modified directly
+class Employee:
+    def __init__(self, name, salary):
+        self._name = name       # protected
+        self._salary = salary   # protected
+
+    def show(self):
+        print(f" Employee: {self._name}, Salary: {self._salary}")
+
+emp = Employee("Amrit", 50000)
+emp.show()
+print("Accessing protected variable:", emp._salary)  # possible but not recommended
+
+#output;
+#  Employee: Amrit, Salary: 50000
+# Accessing protected variable: 50000
+
+
+
+
+# Program 3: Getter and Setter for private variable
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.__owner = owner
+        self.__balance = balance
+
+    def get_balance(self):
+        return self.__balance
+
+    def set_balance(self, amount):
+        if amount >= 0:
+            self.__balance = amount
+        else:
+            print(" Balance cannot be negative!")
+
+owner = input("Enter account owner: ")
+acc = BankAccount(owner, int(input("Enter initial balance: ")))
+print(" Current Balance:", acc.get_balance())
+new_balance = int(input("Enter new balance: "))
+acc.set_balance(new_balance)
+print(" Updated Balance:", acc.get_balance())
+
+#output;
+# Enter account owner: ansh
+# Enter initial balance: 2000
+#  Current Balance: 2000
+# Enter new balance: 4000
+#  Updated Balance: 4000
+
+
+
+
+
+# Program 4: Name Mangling
+# Private variables can still be accessed using _ClassName__var
+class Demo:
+    def __init__(self):
+        self.__secret = "Hidden Data"
+
+    def show(self):
+        print(" Secret is hidden")
+
+d = Demo()
+d.show()
+print("Accessing hidden data using name mangling:", d._Demo__secret)
+
+#output;
+#  Secret is hidden
+# Accessing hidden data using name mangling: Hidden Data
+
+
+
+
+
+# Program 5: Data hiding in Library system
+class Library:
+    def __init__(self):
+        self.__books = []   # private list
+
+    def add_book(self, title):
+        self.__books.append(title)
+        print(f" Book '{title}' added")
+
+    def show_books(self):
+        print(" Books in library:", self.__books)
+
+lib = Library()
+n = int(input("Enter number of books to add: "))
+for i in range(n):
+    title = input(f"Enter book {i+1} title: ")
+    lib.add_book(title)
+
+lib.show_books()
+
+#output;
+# Enter number of books to add: 3
+# Enter book 1 title: math1
+#  Book 'math1' added
+# Enter book 2 title: math2
+#  Book 'math2' added
+# Enter book 3 title: math3
+#  Book 'math3' added
+#  Books in library: ['math1', 'math2', 'math3']
+
