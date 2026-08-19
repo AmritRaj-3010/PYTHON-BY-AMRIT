@@ -1,0 +1,122 @@
+# Program 1: Class Method Example
+# Uses @classmethod to create object from alternative input
+class Student:
+    def __init__(self, name, roll):
+        self.name = name
+        self.roll = roll
+
+    @classmethod
+    def from_string(cls, data_str):
+        name, roll = data_str.split("-")
+        return cls(name, roll)
+
+data = input("Enter student data (name-roll): ")
+s = Student.from_string(data)
+print(f" Student: {s.name}, Roll: {s.roll}")
+
+#output;
+# Enter student data (name-roll): aman-5
+#  Student: aman, Roll: 5
+
+
+
+
+
+# Program 2: Static Method Example
+# Uses @staticmethod for utility function
+class MathOps:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+x = int(input("Enter first number: "))
+y = int(input("Enter second number: "))
+print(" Sum:", MathOps.add(x, y))
+
+#output;
+# Enter first number: 23
+# Enter second number: 33
+#  Sum: 56
+
+
+
+
+
+# Program 3: Class Method for counting objects
+class Employee:
+    count = 0
+
+    def __init__(self, name):
+        self.name = name
+        Employee.count += 1
+
+    @classmethod
+    def total_employees(cls):
+        return cls.count
+
+n = int(input("Enter number of employees: "))
+for i in range(n):
+    name = input(f"Enter employee {i+1} name: ")
+    emp = Employee(name)
+
+print(" Total employees created:", Employee.total_employees())
+
+#output;
+# Enter number of employees: 2
+# Enter employee 1 name: abhay
+# Enter employee 2 name: achal
+#  Total employees created: 2
+
+
+
+
+
+# Program 4: Static Method for validation
+class Validator:
+    @staticmethod
+    def is_positive(num):
+        return num > 0
+
+num = int(input("Enter a number: "))
+if Validator.is_positive(num):
+    print(" Number is positive")
+else:
+    print(" Number is not positive")
+
+#output;
+# Enter a number: 54
+#  Number is positive
+
+
+
+
+
+# Program 5: Combined Class & Static Methods
+class BankAccount:
+    accounts = []
+
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
+        BankAccount.accounts.append(self)
+
+    @classmethod
+    def total_accounts(cls):
+        return len(cls.accounts)
+
+    @staticmethod
+    def bank_policy():
+        return " Minimum balance must be 1000"
+
+owner = input("Enter account owner: ")
+balance = int(input("Enter initial balance: "))
+acc = BankAccount(owner, balance)
+
+print(" Total accounts:", BankAccount.total_accounts())
+print(" Bank policy:", BankAccount.bank_policy())
+
+#output;
+# Enter account owner: anant
+# Enter initial balance: 2000
+#  Total accounts: 1
+#  Bank policy:  Minimum balance must be 1000
