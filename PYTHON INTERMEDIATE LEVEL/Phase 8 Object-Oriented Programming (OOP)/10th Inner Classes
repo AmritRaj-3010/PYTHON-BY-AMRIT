@@ -1,0 +1,142 @@
+# Program 1: Simple Inner Class
+class University:
+    def __init__(self, name):
+        self.name = name
+
+    class Department:
+        def __init__(self, dept_name):
+            self.dept_name = dept_name
+        def show(self):
+            print(f" Department: {self.dept_name}")
+
+uni_name = input("Enter university name: ")
+dept_name = input("Enter department name: ")
+u = University(uni_name)
+d = University.Department(dept_name)
+print(f"University: {u.name}")
+d.show()
+
+#output;
+# Enter university name: AKTU
+# Enter department name: BTECH
+# University: AKTU
+#  Department: BTECH
+
+
+
+# Program 2: Inner Class for Address inside Student
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+    class Address:
+        def __init__(self, city, pincode):
+            self.city = city
+            self.pincode = pincode
+        def show(self):
+            print(f" City: {self.city}, Pincode: {self.pincode}")
+
+name = input("Enter student name: ")
+city = input("Enter city: ")
+pincode = input("Enter pincode: ")
+s = Student(name)
+addr = Student.Address(city, pincode)
+print(f" Student: {s.name}")
+addr.show()
+
+#output;
+# Enter student name: AMRIT
+# Enter city: U.P.
+# Enter pincode: 212403
+#  Student: AMRIT
+#  City: U.P., Pincode: 212403
+
+
+
+
+
+# Program 3: Inner Class for Engine inside Car
+class Car:
+    def __init__(self, brand):
+        self.brand = brand
+
+    class Engine:
+        def __init__(self, horsepower):
+            self.horsepower = horsepower
+        def show(self):
+            print(f" Engine horsepower: {self.horsepower}")
+
+brand = input("Enter car brand: ")
+hp = int(input("Enter engine horsepower: "))
+c = Car(brand)
+e = Car.Engine(hp)
+print(f" Car: {c.brand}")
+e.show()
+
+#output;
+# Enter car brand: TATA
+# Enter engine horsepower: 24000
+#  Car: TATA
+#  Engine horsepower: 24000
+
+
+
+
+
+# Program 4: Inner Class for Battery inside Laptop
+class Laptop:
+    def __init__(self, model):
+        self.model = model
+
+    class Battery:
+        def __init__(self, capacity):
+            self.capacity = capacity
+        def show(self):
+            print(f" Battery capacity: {self.capacity} mAh")
+
+model = input("Enter laptop model: ")
+capacity = int(input("Enter battery capacity (mAh): "))
+l = Laptop(model)
+b = Laptop.Battery(capacity)
+print(f" Laptop: {l.model}")
+b.show()
+
+#output;
+# Enter laptop model: dell
+# Enter battery capacity (mAh):23000
+#  Laptop: dell
+#  Battery capacity: 23000 mAh
+
+
+
+
+# Program 5: Inner Class for Date inside Calendar
+from datetime import date
+
+
+class Calendar:
+    def __init__(self, year):
+        self.year = year
+
+    class Date:
+        def __init__(self, date, month):
+            self.date = date
+            self.month = month
+        def show(self):
+            print(f" Date: {self.date}/{self.month}")
+
+year = int(input("Enter year: "))
+day = int(input("Enter date: "))
+month = int(input("Enter month: "))
+cal = Calendar(year)
+d = Calendar.Date(date, month)
+print(f" Calendar Year: {cal.year}")
+d.show()
+
+#output;
+# Enter year: 2026
+# Enter date: 30
+# Enter month: 10
+#  Calendar Year: 2026
+#  Date: <class 'datetime.date'>/10
+
