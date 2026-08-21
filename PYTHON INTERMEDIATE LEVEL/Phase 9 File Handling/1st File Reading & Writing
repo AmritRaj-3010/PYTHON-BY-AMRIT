@@ -1,0 +1,85 @@
+# Program 1: Write to a file
+filename = input("Enter file name (e.g., demo.txt): ")
+text = input("Enter text to write: ")
+
+with open(filename, "w") as f:
+    f.write(text)
+
+print(f" Text written to {filename}")
+
+#output;
+# Enter file name (e.g., demo.txt): aman.txt
+# Enter text to write: abc dfd dfgf dfg gf df gfd sdfg
+#  Text written to aman.txt
+
+
+
+# Program 2: Read from a file
+filename = input("Enter file name to read: ")
+
+try:
+    with open(filename, "r") as f:
+        content = f.read()
+    print(" File content:\n", content)
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+# Enter file name to read: aman.txt
+#  File content:
+#  abc dfd dfgf dfg gf df gfd sdfg
+
+
+
+# Program 3: Append to a file
+filename = input("Enter file name to append: ")
+text = input("Enter text to append: ")
+
+with open(filename, "a") as f:
+    f.write("\n" + text)
+
+print(f" Text appended to {filename}")
+
+#output;
+# Enter file name to append: aman.txt
+# Enter text to append: asd fds kjh dfg sdfg
+#  Text appended to aman.txt
+
+
+
+# Program 4: Read file line by line
+filename = input("Enter file name to read line by line: ")
+
+try:
+    with open(filename, "r") as f:
+        print(" File lines:")
+        for line in f:
+            print(line.strip())
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+# Enter file name to read line by line: aman.txt
+#  File lines:
+# abc dfd dfgf dfg gf df gfd sdfg
+# asd fds kjh dfg sdfg
+
+
+
+# Program 5: Write multiple lines from user input
+filename = input("Enter file name: ")
+n = int(input("Enter number of lines: "))
+
+with open(filename, "w") as f:
+    for i in range(n):
+        line = input(f"Enter line {i+1}: ")
+        f.write(line + "\n")
+
+print(f" {n} lines written to {filename}")
+
+#output;
+# Enter file name: aman.txt
+# Enter number of lines: 1
+# Enter line 1: asd fds sdf dss
+#  1 lines written to aman.txt
+
