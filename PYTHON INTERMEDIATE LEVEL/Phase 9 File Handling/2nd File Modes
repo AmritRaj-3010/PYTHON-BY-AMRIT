@@ -1,0 +1,73 @@
+# Program 1: Read mode ("r")
+# Opens file for reading only
+filename = input("Enter file name to read: ")
+try:
+    with open(filename, "r") as f:
+        content = f.read()
+    print(" File content:\n", content)
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+# Program 2: Write mode ("w")
+# Creates new file or overwrites existing file
+filename = input("Enter file name to write: ")
+text = input("Enter text to write: ")
+
+with open(filename, "w") as f:
+    f.write(text)
+
+print(f" Text written to {filename} (old content erased if file existed)")
+
+
+#output;
+
+
+
+
+# Program 3: Append mode ("a")
+# Adds new content at the end of file
+filename = input("Enter file name to append: ")
+text = input("Enter text to append: ")
+
+with open(filename, "a") as f:
+    f.write("\n" + text)
+
+print(f" Text appended to {filename}")
+
+#output;
+
+
+
+
+# Program 4: Read Binary mode ("rb")
+# Reads file in binary format (useful for images, videos, etc.)
+filename = input("Enter binary file name to read: ")
+try:
+    with open(filename, "rb") as f:
+        data = f.read(20)  # read first 20 bytes
+    print(" First 20 bytes of file:", data)
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+# Program 5: Write Binary mode ("wb")
+# Writes binary data to a file
+filename = input("Enter binary file name to create: ")
+data = input("Enter text to save as binary: ")
+
+with open(filename, "wb") as f:
+    f.write(data.encode())  # convert string to bytes
+
+print(f" Binary data written to {filename}")
+
+#output;
+
