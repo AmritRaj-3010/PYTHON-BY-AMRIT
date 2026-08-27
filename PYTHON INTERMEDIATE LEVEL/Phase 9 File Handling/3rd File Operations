@@ -1,0 +1,67 @@
+# Program 1: Using tell()
+# Shows current position of file pointer
+filename = input("Enter file name to read: ")
+with open(filename, "r") as f:
+    print(" Initial position:", f.tell())
+    content = f.read(5)   # read first 5 characters
+    print("Read content:", content)
+    print(" Current position:", f.tell())
+
+#output;
+
+
+
+
+# Program 2: Using seek()
+# Moves file pointer to a specific position
+filename = input("Enter file name to read: ")
+with open(filename, "r") as f:
+    f.seek(10)   # move pointer to 10th character
+    content = f.read(10)
+    print(" Content from position 10:", content)
+
+#output;
+
+
+
+
+# Program 3: Reading specific lines using seek()
+filename = input("Enter file name: ")
+with open(filename, "r") as f:
+    print(" Position before reading:", f.tell())
+    line1 = f.readline()
+    print("Line 1:", line1.strip())
+    print(" Position after reading line 1:", f.tell())
+    f.seek(0)   # reset pointer to beginning
+    print(" Position reset:", f.tell())
+    line_again = f.readline()
+    print("Line again:", line_again.strip())
+
+#output;
+
+
+
+
+# Program 4: Closing a file explicitly
+filename = input("Enter file name: ")
+f = open(filename, "r")
+print(" First line:", f.readline().strip())
+print("Closing file now...")
+f.close()
+print(" File closed successfully")
+
+#output;
+
+
+
+
+# Program 5: Writing and then seeking
+filename = input("Enter file name: ")
+with open(filename, "w+") as f:   # open for read/write
+    f.write("Hello Amrit, welcome to Python file handling!")
+    f.seek(0)   # move pointer back to start
+    print(" File content:", f.read())
+
+#output;
+
+
