@@ -1,0 +1,76 @@
+# Program 1: Read file line by line
+filename = input("Enter file name: ")
+try:
+    with open(filename, "r") as f:
+        print(" File lines:")
+        for line in f:
+            print(line.strip())
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+# Program 2: Count words in a text file
+filename = input("Enter file name: ")
+try:
+    with open(filename, "r") as f:
+        content = f.read()
+    words = content.split()
+    print(" Total words:", len(words))
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+# Program 3: Count lines in a text file
+filename = input("Enter file name: ")
+try:
+    with open(filename, "r") as f:
+        lines = f.readlines()
+    print(" Total lines:", len(lines))
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+# Program 4: Search for a word in a text file
+filename = input("Enter file name: ")
+word = input("Enter word to search: ")
+try:
+    with open(filename, "r") as f:
+        content = f.read()
+    if word in content:
+        print(f" Word '{word}' found in file")
+    else:
+        print(f" Word '{word}' not found")
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+# Program 5: Copy content from one text file to another
+src = input("Enter source file name: ")
+dest = input("Enter destination file name: ")
+try:
+    with open(src, "r") as f1:
+        content = f1.read()
+    with open(dest, "w") as f2:
+        f2.write(content)
+    print(f" Content copied from {src} to {dest}")
+except FileNotFoundError:
+    print(" Source file not found!")
+
+#output;
+
