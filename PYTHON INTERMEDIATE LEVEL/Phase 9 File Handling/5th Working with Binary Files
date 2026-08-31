@@ -1,0 +1,75 @@
+# Program 1: Write binary data to a file
+filename = input("Enter binary file name: ")
+data = input("Enter text to save as binary: ")
+
+with open(filename, "wb") as f:
+    f.write(data.encode())   # convert string to bytes
+
+print(f" Binary data written to {filename}")
+
+#output;
+
+
+
+
+# Program 2: Read binary data from a file
+filename = input("Enter binary file name to read: ")
+try:
+    with open(filename, "rb") as f:
+        content = f.read(20)   # read first 20 bytes
+    print(" First 20 bytes of file:", content)
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+# Program 3: Copy binary file (like image or video)
+src = input("Enter source binary file: ")
+dest = input("Enter destination file: ")
+try:
+    with open(src, "rb") as f1:
+        data = f1.read()
+    with open(dest, "wb") as f2:
+        f2.write(data)
+    print(f" Binary file copied from {src} to {dest}")
+except FileNotFoundError:
+    print(" Source file not found!")
+
+#output;
+
+
+
+
+# Program 4: Append binary data
+filename = input("Enter binary file name: ")
+extra = input("Enter extra text to append: ")
+
+with open(filename, "ab") as f:   # append in binary mode
+    f.write(extra.encode())
+
+print(f" Extra binary data appended to {filename}")
+
+#output;
+
+
+
+
+# Program 5: Read binary file in chunks
+filename = input("Enter binary file name: ")
+try:
+    with open(filename, "rb") as f:
+        print(" Reading file in chunks of 10 bytes:")
+        while True:
+            chunk = f.read(10)
+            if not chunk:
+                break
+            print(chunk)
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
