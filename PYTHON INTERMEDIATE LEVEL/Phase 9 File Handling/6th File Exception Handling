@@ -1,0 +1,80 @@
+# Program 1: Handle FileNotFoundError
+filename = input("Enter file name to read: ")
+try:
+    with open(filename, "r") as f:
+        content = f.read()
+    print(" File content:\n", content)
+except FileNotFoundError:
+    print(" Error: File not found!")
+
+#output;
+
+
+
+
+# Program 2: Handle PermissionError
+filename = input("Enter file name: ")
+try:
+    with open(filename, "w") as f:
+        f.write("Testing permission error handling")
+    print(" File written successfully")
+except PermissionError:
+    print(" Error: No permission to write this file")
+
+#output;
+
+
+
+
+# Program 3: Handle multiple exceptions
+filename = input("Enter file name: ")
+try:
+    with open(filename, "r") as f:
+        print(" First line:", f.readline())
+except FileNotFoundError:
+    print(" Error: File not found")
+except PermissionError:
+    print(" Error: Permission denied")
+
+#output;
+
+
+
+
+# Program 4: Using finally block
+filename = input("Enter file name: ")
+try:
+    f = open(filename, "r")
+    print(" File content:", f.read())
+except FileNotFoundError:
+    print(" Error: File not found")
+finally:
+    try:
+        f.close()
+        print(" File closed safely")
+    except:
+        print(" File was never opened")
+
+#output;
+
+
+
+
+
+# Program 5: Custom exception handling for empty file
+filename = input("Enter file name: ")
+try:
+    with open(filename, "r") as f:
+        content = f.read()
+        if not content.strip():
+            raise Exception("File is empty")
+    print(" File content:\n", content)
+except FileNotFoundError:
+    print(" Error: File not found")
+except Exception as e:
+    print(" Error:", e)
+
+#output
+
+
+
