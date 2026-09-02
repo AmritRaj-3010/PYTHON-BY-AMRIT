@@ -1,0 +1,76 @@
+# Program 1: Simple file writing with 'with'
+filename = input("Enter file name: ")
+text = input("Enter text to write: ")
+
+with open(filename, "w") as f:
+    f.write(text)
+
+print(f" Text written to {filename} (file closed automatically)")
+
+#output;
+
+
+
+
+
+# Program 2: Simple file reading with 'with'
+filename = input("Enter file name to read: ")
+try:
+    with open(filename, "r") as f:
+        content = f.read()
+    print(" File content:\n", content)
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+
+# Program 3: Append text using 'with'
+filename = input("Enter file name to append: ")
+text = input("Enter text to append: ")
+
+with open(filename, "a") as f:
+    f.write("\n" + text)
+
+print(f" Text appended to {filename} (file closed automatically)")
+
+#output;
+
+
+
+
+
+# Program 4: Read file line by line using 'with'
+filename = input("Enter file name: ")
+try:
+    with open(filename, "r") as f:
+        print(" File lines:")
+        for line in f:
+            print(line.strip())
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+
+# Program 5: Write multiple lines using 'with'
+filename = input("Enter file name: ")
+n = int(input("Enter number of lines: "))
+
+with open(filename, "w") as f:
+    for i in range(n):
+        line = input(f"Enter line {i+1}: ")
+        f.write(line + "\n")
+
+print(f" {n} lines written to {filename} (file closed automatically)")
+
+#output;
+
+
+
