@@ -1,0 +1,95 @@
+# Program 1: Word frequency counter
+filename = input("Enter file name: ")
+try:
+    with open(filename, "r") as f:
+        content = f.read().lower().split()
+    freq = {}
+    for word in content:
+        freq[word] = freq.get(word, 0) + 1
+    print(" Word frequencies:", freq)
+except FileNotFoundError:
+    print(" File not found!")
+
+#output;
+
+
+
+
+
+
+# Program 2: Student record system
+filename = "students.txt"
+n = int(input("Enter number of students: "))
+with open(filename, "w") as f:
+    for i in range(n):
+        name = input(f"Enter student {i+1} name: ")
+        roll = input(f"Enter roll number: ")
+        f.write(f"{name}-{roll}\n")
+print(" Student records saved")
+
+with open(filename, "r") as f:
+    print(" Student Records:")
+    for line in f:
+        print(line.strip())
+
+#output;
+
+
+
+
+
+
+# Program 3: Log file generator
+filename = "log.txt"
+event = input("Enter event description: ")
+with open(filename, "a") as f:
+    from datetime import datetime
+    f.write(f"{datetime.now()} - {event}\n")
+print(" Event logged successfully")
+
+#output;
+
+
+
+
+
+# Program 4: Search student by roll number
+filename = "students.txt"
+roll_search = input("Enter roll number to search: ")
+try:
+    with open(filename, "r") as f:
+        found = False
+        for line in f:
+            name, roll = line.strip().split("-")
+            if roll == roll_search:
+                print(f" Student found: {name}, Roll: {roll}")
+                found = True
+                break
+        if not found:
+            print(" Student not found")
+except FileNotFoundError:
+    print(" Records file not found!")
+
+#output;
+
+
+
+
+
+
+# Program 5: Copy log file to backup
+src = "log.txt"
+dest = "backup_log.txt"
+try:
+    with open(src, "r") as f1:
+        content = f1.read()
+    with open(dest, "w") as f2:
+        f2.write(content)
+    print(f" Log file copied from {src} to {dest}")
+except FileNotFoundError:
+    print(" Log file not found!")
+
+#output;
+
+
+
